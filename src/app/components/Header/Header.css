@@ -1,0 +1,120 @@
+/* =========================
+   NAV SECTION (TRANSPARENT)
+========================= */
+.nav-section {
+  padding-top: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: transparent;
+}
+
+.nav {
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--black-200);
+  border-bottom: 1px solid var(--gray-200);
+  border-radius: 0 0 12px 12px;
+  padding: 0 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.nav-links a.active {
+  color: #fff;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+/* ✅ hover area বড় করা (gap issue fix) */
+.has-dropdown {
+  position: relative;
+}
+
+.has-sub {
+  cursor: pointer;
+}
+
+/* Dropdown default hidden */
+.dropdown {
+  position: absolute;
+  top: 52px; /* little lower */
+  left: 0;
+  width: 260px;
+
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 12px;
+  padding: 12px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: 0.18s ease;
+
+  /* ✅ mouse hover always works */
+  pointer-events: none;
+}
+
+/* show dropdown */
+.dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Arrow rotate on open/hover */
+.has-dropdown:hover svg {
+  transform: rotate(180deg);
+  transition: 0.2s ease;
+}
