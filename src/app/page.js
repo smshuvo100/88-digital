@@ -10,6 +10,11 @@ import HomeHero from "./components/HomeHero/HomeHero";
 import Brands from "./components/Brands/Brands";
 import Quote from "./components/Quote/Quote";
 import RecentWork from "./components/RecentWork/RecentWork";
+import SuccessStories from "./components/SuccessStories/SuccessStories";
+import OurServices from "./components/OurServices/OurServices";
+import FAQ from "./components/FAQ/FAQ";
+import OurProcess from "./components/OurProcess/OurProcess";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -17,10 +22,23 @@ export default function Home() {
       <Header />
 
       <HomeHero />
+
       <Brands />
 
       <Quote />
+
       <RecentWork />
+
+      <OurServices />
+
+      <OurProcess />
+
+      <SuccessStories />
+
+      <FAQ />
+
+      <Footer />
+
       {/* ===== HERO SECTION (SEPARATE) ===== */}
 
       {/* Next section placeholder */}

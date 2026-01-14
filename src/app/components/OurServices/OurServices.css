@@ -1,0 +1,219 @@
+/* =========================
+   OUR SERVICES (same as RecentWork)
+========================= */
+
+.os-sec {
+  background: var(--off-white);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✅ OPTIONAL: stripes like figma (if you want remove this block) */
+.os-sec::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 70, 12, 0.03) 0px,
+    rgba(255, 70, 12, 0.03) 60px,
+    rgba(235, 110, 255, 0.02) 60px,
+    rgba(235, 110, 255, 0.02) 120px
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+section.os-sec h2.uppercase {
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* same wrappers */
+.os-outside {
+  overflow: visible;
+}
+
+.os-slider {
+  position: relative;
+}
+
+/* ✅ EXACT same trick as RecentWork */
+.os-swiper {
+  padding-bottom: 60px !important;
+
+  /* same calculation style */
+  width: calc(100% + (100vw - var(--container-width)) / 1);
+  padding-right: calc((100vw - var(--container-width)) / 2);
+}
+
+.os-swiper .swiper-wrapper {
+  align-items: stretch;
+  will-change: transform;
+}
+
+/* ✅ IMPORTANT: NO active bigger. All same width */
+.os-swiper .swiper-slide {
+  width: 310px; /* adjust if you want 4 visible like figma */
+  display: flex;
+}
+
+/* =========================
+   CARD (same size always)
+========================= */
+
+.os-card {
+  width: 100%;
+  height: 380px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+
+  /* glass gradient like figma */
+  /* background: linear-gradient(
+    180deg,
+    rgba(120, 170, 255, 0.35) 0%,
+    rgba(235, 110, 255, 0.2) 55%,
+    rgba(255, 70, 12, 0.18) 100%
+  ); */
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(10px); */
+  padding: 26px 22px;
+  background: linear-gradient(
+      135deg,
+      rgba(12, 97, 255, 0.25) 0%,
+      rgba(236, 110, 255, 0.25) 85%
+    ),
+    rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  /* position: relative; */
+}
+
+/* big title */
+.os-title {
+  white-space: pre-line; /* for line breaks */
+  font-family: var(--font-heading);
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 700;
+  color: var(--black-200);
+  /* margin-top: 70px; */
+  position: relative;
+  z-index: 2;
+}
+
+/* learn more */
+.os-link {
+  /* position: absolute; */
+  /* left: 22px; */
+  /* bottom: 22px; */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  /* z-index: 2; */
+  margin-top: 35px;
+}
+
+.os-arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* watermark behind */
+.os-water {
+  position: absolute;
+  left: 21px;
+  bottom: 94px;
+  white-space: pre-line;
+  font-family: var(--font-heading);
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 800;
+  color: rgb(0 0 0 / 6%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================
+   DOTS (same style as RecentWork)
+========================= */
+
+.os-swiper .swiper-pagination-bullets {
+  max-width: 1200px;
+}
+
+.os-swiper
+  .swiper-pagination-bullets
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 32px;
+  height: 4px;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.os-swiper .swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 8px;
+  height: 4px;
+  border-radius: 4px;
+  opacity: 0.35;
+  background: #000;
+}
+
+.os-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* CTA button left like figma */
+.os-cta {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+/* responsive */
+@media (max-width: 1230px) {
+  .os-swiper {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .os-swiper .swiper-slide {
+    width: 240px;
+  }
+
+  .os-title {
+    font-size: 38px;
+    line-height: 42px;
+  }
+}
+
+@media (max-width: 576px) {
+  .os-swiper {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 90px !important;
+  }
+
+  .os-swiper .swiper-slide {
+    width: 82%;
+  }
+
+  .os-swiper .swiper-pagination-bullets {
+    bottom: 22px !important;
+  }
+
+  .os-cta {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,295 @@
+/* =========================
+   SUCCESS STORIES (INSIDE CONTAINER)
+========================= */
+
+.ss-sec {
+  position: relative;
+  padding: 90px 0 70px;
+  background: var(--off-white);
+  overflow: hidden;
+}
+
+/* stripes */
+.ss-sec::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 70, 12, 0.03) 0px,
+    rgba(255, 70, 12, 0.03) 60px,
+    rgba(235, 110, 255, 0.02) 60px,
+    rgba(235, 110, 255, 0.02) 120px
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.ss-title {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 42px;
+  color: var(--gray-500);
+}
+
+/* =========================
+   SWIPER (INSIDE CONTAINER)
+========================= */
+
+.ss-swiper {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding-bottom: 70px !important;
+}
+
+.ss-swiper .swiper-wrapper {
+  align-items: center;
+}
+
+/* =========================
+   SLIDES (AUTO WIDTH)
+========================= */
+
+/* base: all slides small */
+.ss-slide {
+  width: 328px;
+  display: flex;
+  justify-content: center;
+  opacity: 0.55;
+  transition: opacity 0.25s ease;
+}
+
+/* ✅ IMPORTANT:
+   Right-most (3rd visible) slide becomes "featured"
+   Structure:
+   active (left) -> next (middle) -> next+slide (right)
+*/
+.ss-swiper .swiper-slide-next + .swiper-slide {
+  width: 490px !important;
+  opacity: 1;
+  z-index: 5;
+}
+
+/* dim the first two visible a bit */
+.ss-swiper .swiper-slide-active,
+.ss-swiper .swiper-slide-next {
+  opacity: 0.55;
+}
+
+/* =========================
+   CARD BASE (small)
+========================= */
+
+.ss-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 28px 15px;
+  position: relative;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+
+  /* small height */
+  min-height: 403px;
+  transition: min-height 0.35s ease, box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* ✅ featured (right-most) card bigger */
+.ss-swiper .swiper-slide-next + .swiper-slide .ss-card {
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 0px 13px rgba(0, 0, 0, 0.09);
+  min-height: 487px;
+}
+
+/* =========================
+   AVATAR + TEXT
+========================= */
+
+.ss-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: -10px auto 10px;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.ss-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ss-name {
+  text-align: center;
+  color: var(--black-200);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.ss-role {
+  text-align: center;
+  margin-top: 4px;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 15px;
+}
+
+/* stat */
+.ss-stat {
+  margin-top: 20px;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  position: relative;
+}
+
+.ss-percent {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1;
+  font-size: 56px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* opacity: 0.9; */
+}
+.ss-percent::first-letter {
+  font-size: 86px;
+}
+
+.ss-percent-sign {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.ss-stat .ss-label {
+  color: rgba(255, 70, 12, 0.55);
+  font-size: 14px;
+  position: absolute;
+  right: 20px;
+  top: 8px;
+}
+
+/* quote */
+.ss-quote {
+  margin-top: 18px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.62);
+  line-height: 1.55;
+
+  /* ✅ GLASS BOX */
+  padding: 18px 18px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.ss-bold {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.74);
+}
+
+.ss-strong {
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.ss-swiper .swiper-pagination-bullets {
+  bottom: 10px !important;
+}
+
+.ss-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 4px;
+  border-radius: 4px;
+  opacity: 0.35;
+  background: #000;
+}
+
+.ss-swiper .swiper-pagination-bullet-active {
+  width: 34px;
+  opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .ss-slide {
+    width: 280px;
+  }
+
+  .ss-swiper .swiper-slide-next + .swiper-slide {
+    width: 420px !important;
+  }
+
+  .ss-percent {
+    font-size: 74px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ss-swiper {
+    padding-bottom: 90px !important;
+  }
+
+  /* mobile: single card feel */
+  .ss-slide {
+    width: 88%;
+    opacity: 1;
+  }
+
+  .ss-swiper .swiper-slide-next + .swiper-slide {
+    width: 88% !important;
+    opacity: 1;
+  }
+
+  .ss-swiper .swiper-pagination-bullets {
+    bottom: 18px !important;
+  }
+}
+
+.ss-swiper .swiper-slide-next + .swiper-slide h5.ss-name {
+  font-size: 22px;
+  line-height: 34px;
+}
+
+.ss-swiper .swiper-slide-next + .swiper-slide .ss-avatar {
+  width: 70px;
+  height: 70px;
+}
+
+.ss-swiper .swiper-slide-next + .swiper-slide .ss-percent::first-letter {
+  font-size: 220px;
+}
+
+.ss-swiper .swiper-slide-next + .swiper-slide .ss-percent {
+  font-size: 130px;
+}
+
+.ss-swiper .swiper-slide-next + .swiper-slide .ss-stat .ss-label {
+  right: 70px;
+  top: 29px;
+  font-size: 16px;
+}
+
+.ss-swiper .swiper-slide-next + .swiper-slide .ss-quote {
+  font-size: 20px;
+  margin-top: -70px;
+}

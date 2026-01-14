@@ -1,0 +1,172 @@
+/* =========================
+   FOOTER (LIKE SCREENSHOT)
+========================= */
+
+.ft-sec {
+  position: relative;
+  background: var(--off-white);
+  padding: 95px 0 55px;
+  overflow: hidden;
+}
+
+.ft-sec .container {
+  position: relative;
+}
+
+/* title */
+.ft-title {
+  /* position: relative; */
+  /* z-index: 2; */
+  text-align: center;
+  /* font-family: var(--font-heading); */
+  /* font-weight: 700; */
+  /* font-size: 64px; */
+  /* line-height: 1.06; */
+  color: var(--black-200);
+  /* margin-bottom: 22px; */
+  /* margin-bottom: 30px; */
+}
+
+/* CTA button (wide) */
+.ft-cta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.ft-cta-btn {
+  width: 525px;
+  /* height: 40px; */
+  /* border-radius: 10px; */
+  /* display: inline-flex; */
+  /* align-items: center; */
+  justify-content: center;
+  /* gap: 10px; */
+  /* background: var(--gradient-primary); */
+  /* color: var(--white); */
+  /* text-decoration: none; */
+  /* text-transform: uppercase; */
+  /* font-size: 12px; */
+  /* font-weight: 700; */
+  /* letter-spacing: 0.08em; */
+  /* box-shadow: 0 14px 36px rgba(255, 70, 12, 0.18),
+    0 14px 36px rgba(235, 110, 255, 0.16); */
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.ft-cta-btn svg {
+  font-size: 16px;
+}
+
+/* brand center */
+.ft-brand {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.ft-logo {
+  height: auto;
+}
+
+.ft-tagline {
+  margin-top: 8px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 20px;
+}
+
+/* socials */
+.ft-social {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ft-social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.72);
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+  background: #333;
+  color: #fff;
+  font-size: 17px;
+}
+
+.ft-social-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* divider */
+.ft-divider {
+  position: relative;
+  z-index: 2;
+  margin: 26px auto 16px;
+  max-width: 920px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* copyright */
+.ft-copy {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* scroll top */
+.ft-top {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: 28px auto 0;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ft-top-arrow {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-left: 1px solid rgba(0, 0, 0, 0.7);
+  border-top: 1px solid rgba(0, 0, 0, 0.7);
+  transform: rotate(45deg);
+  margin: 0 auto;
+}
+
+/* responsive */
+@media (max-width: 992px) {
+  .ft-title {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ft-title {
+    font-size: 40px;
+  }
+  .ft-cta-btn {
+    width: 280px;
+  }
+}
+
+footer.ft-sec .btn {
+  text-align: center;
+}
