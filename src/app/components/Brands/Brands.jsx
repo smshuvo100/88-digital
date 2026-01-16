@@ -25,8 +25,8 @@ export default function Brands() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={140}
-                  height={44}
+                  width={200}
+                  height={46}
                   className="brand-img"
                 />
               </div>
@@ -38,8 +38,8 @@ export default function Brands() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={140}
-                  height={44}
+                  width={200}
+                  height={46}
                   className="brand-img"
                 />
               </div>

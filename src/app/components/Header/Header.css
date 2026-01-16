@@ -118,3 +118,8 @@
   transform: rotate(180deg);
   transition: 0.2s ease;
 }
+
+header.nav-section .brand img {
+  width: auto;
+  height: 26px;
+}

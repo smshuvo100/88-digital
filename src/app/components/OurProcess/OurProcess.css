@@ -1,7 +1,14 @@
 /* =========================
    OUR PROCESS SECTION
 ========================= */
+section.op-sec .op-right img.op-img {
+  width: 100%;
+}
 
+section.op-sec h4.op-step img {
+  height: 45px !important;
+  width: auto !important;
+}
 .op-sec {
   background: #010309;
   padding: 70px 0;
@@ -25,7 +32,7 @@
 
 /* LEFT TEXT */
 .op-left {
-  width: 42%;
+  width: 43%;
   z-index: 2;
 }
 
@@ -56,6 +63,11 @@
   max-width: 360px;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
+}
+
+/* only desktop/tablet: reverse layout for odd slides */
+.op-box.op-box-reverse {
+  flex-direction: row-reverse !important;
 }
 
 /* =========================

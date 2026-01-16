@@ -82,16 +82,16 @@ export default function RecentWork() {
               loop={true}
               speed={650}
               grabCursor={true}
-              centeredSlides={false}
+              centeredSlides={false} // ✅ SS-এর মতো: featured right-most
               watchSlidesProgress={true}
               observer={true}
               observeParents={true}
               updateOnWindowResize={true}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-              }}
+              // autoplay={{
+              //   delay: 5000,
+              //   disableOnInteraction: false,
+              //   pauseOnMouseEnter: false,
+              // }}
               pagination={{ clickable: true }}
               className="rw-swiper"
             >

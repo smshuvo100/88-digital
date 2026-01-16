@@ -60,20 +60,19 @@
   transition: opacity 0.25s ease;
 }
 
-/* ✅ IMPORTANT:
-   Right-most (3rd visible) slide becomes "featured"
-   Structure:
-   active (left) -> next (middle) -> next+slide (right)
+/* ✅ NEW FEATURED:
+   তুমি যেই selector বলেছো সেটাই BIG হবে
 */
-.ss-swiper .swiper-slide-next + .swiper-slide {
+.ss-swiper
+  .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide {
   width: 490px !important;
   opacity: 1;
   z-index: 5;
 }
 
-/* dim the first two visible a bit */
+/* dim the others */
 .ss-swiper .swiper-slide-active,
-.ss-swiper .swiper-slide-next {
+.ss-swiper .swiper-slide-next + .swiper-slide {
   opacity: 0.55;
 }
 
@@ -88,17 +87,17 @@
   border-radius: 14px;
   padding: 28px 15px;
   position: relative;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+  /* box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06); */
   backdrop-filter: blur(10px);
-
-  /* small height */
   min-height: 403px;
   transition: min-height 0.35s ease, box-shadow 0.35s ease,
     background 0.35s ease;
 }
 
-/* ✅ featured (right-most) card bigger */
-.ss-swiper .swiper-slide-next + .swiper-slide .ss-card {
+/* ✅ featured card bigger (NEXT slide) */
+.ss-swiper
+  .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
+  .ss-card {
   background: rgba(255, 255, 255, 0.72);
   box-shadow: 0 0px 13px rgba(0, 0, 0, 0.09);
   min-height: 487px;
@@ -156,8 +155,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* opacity: 0.9; */
 }
+
 .ss-percent::first-letter {
   font-size: 86px;
 }
@@ -182,7 +181,6 @@
   color: rgba(0, 0, 0, 0.62);
   line-height: 1.55;
 
-  /* ✅ GLASS BOX */
   padding: 18px 18px;
   border-radius: 16px;
 
@@ -203,6 +201,52 @@
 .ss-strong {
   font-weight: 800;
   color: rgba(0, 0, 0, 0.72);
+}
+
+/* =========================
+   FEATURED TYPOGRAPHY (NEXT)
+========================= */
+
+.ss-swiper
+  .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
+  h5.ss-name {
+  font-size: 22px;
+  line-height: 34px;
+}
+
+.ss-swiper
+  .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
+  .ss-avatar {
+  width: 70px;
+  height: 70px;
+}
+
+.ss-swiper
+  .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
+  .ss-percent::first-letter {
+  font-size: 220px;
+}
+
+.ss-swiper
+  .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
+  .ss-percent {
+  font-size: 130px;
+}
+
+.ss-swiper
+  .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
+  .ss-stat
+  .ss-label {
+  right: 70px;
+  top: 29px;
+  font-size: 16px;
+}
+
+.ss-swiper
+  .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
+  .ss-quote {
+  font-size: 20px;
+  margin-top: -70px;
 }
 
 /* =========================
@@ -235,7 +279,8 @@
     width: 280px;
   }
 
-  .ss-swiper .swiper-slide-next + .swiper-slide {
+  .ss-swiper
+    .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide {
     width: 420px !important;
   }
 
@@ -249,13 +294,13 @@
     padding-bottom: 90px !important;
   }
 
-  /* mobile: single card feel */
   .ss-slide {
     width: 88%;
     opacity: 1;
   }
 
-  .ss-swiper .swiper-slide-next + .swiper-slide {
+  .ss-swiper
+    .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide {
     width: 88% !important;
     opacity: 1;
   }
@@ -263,33 +308,4 @@
   .ss-swiper .swiper-pagination-bullets {
     bottom: 18px !important;
   }
-}
-
-.ss-swiper .swiper-slide-next + .swiper-slide h5.ss-name {
-  font-size: 22px;
-  line-height: 34px;
-}
-
-.ss-swiper .swiper-slide-next + .swiper-slide .ss-avatar {
-  width: 70px;
-  height: 70px;
-}
-
-.ss-swiper .swiper-slide-next + .swiper-slide .ss-percent::first-letter {
-  font-size: 220px;
-}
-
-.ss-swiper .swiper-slide-next + .swiper-slide .ss-percent {
-  font-size: 130px;
-}
-
-.ss-swiper .swiper-slide-next + .swiper-slide .ss-stat .ss-label {
-  right: 70px;
-  top: 29px;
-  font-size: 16px;
-}
-
-.ss-swiper .swiper-slide-next + .swiper-slide .ss-quote {
-  font-size: 20px;
-  margin-top: -70px;
 }

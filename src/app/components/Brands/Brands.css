@@ -81,7 +81,7 @@
 
 .brand-img {
   width: auto;
-  height: 34px; /* keep same height like screenshot */
+  height: 46px; /* keep same height like screenshot */
   object-fit: contain;
 }
 
@@ -94,5 +94,5 @@
 
 .brands-wrap p.text3 {
   text-align: center;
-  margin-bottom: 26px;
+  margin-bottom: 50px;
 }

@@ -11,13 +11,28 @@
 
 .rw-slider {
   position: relative;
+  /* height: 600px; */
+}
+
+.rw-sec {
+  background: var(--off-white);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rw-outside {
+  overflow: visible;
+}
+
+.rw-slider {
+  position: relative;
 }
 
 /* ✅ right side container-এর বাইরে যাবে */
 .rw-swiper {
   padding-bottom: 60px !important;
-  overflow: visible;
-
+  overflow: visible !important;
   width: calc(100% + (100vw - var(--container-width)) / 1);
   padding-right: calc((100vw - var(--container-width)) / 2);
 }
@@ -27,48 +42,79 @@
   will-change: transform;
 }
 
-/* ✅ IMPORTANT: width transition দিবেন না (autoplay stuck হয়) */
+/* =========================
+   SLIDES (AUTO WIDTH)
+   ✅ base small
+   ✅ featured = MIDDLE (swiper-slide-next)
+========================= */
+
 .rw-swiper .swiper-slide {
   width: 380px;
   display: flex;
   align-items: flex-end;
+
+  /* ❌ width transition দিবেন না */
+  transition: opacity 0.25s ease;
+  opacity: 0.55;
 }
 
-.rw-swiper .swiper-slide-active {
-  width: 600px;
+/* ✅ featured = middle (2nd visible) slide */
+.rw-swiper .swiper-slide-next {
+  width: 520px !important; /* ✅ your custom width */
+  opacity: 1;
+  z-index: 5;
 }
 
-/* card */
+/* ✅ dim left (active) + right (3rd visible) */
+.rw-swiper .swiper-slide-active,
+.rw-swiper .swiper-slide-next + .swiper-slide {
+  opacity: 0.55;
+}
+
+/* =========================
+   CARD
+========================= */
+
 .rw-card {
   background: rgba(255, 255, 255, 0.72);
   border-radius: 18px;
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 460px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-  transition: height 0.35s ease, box-shadow 0.35s ease;
+
+  /* ✅ avoid transition: all */
+  transition: all 0.35s ease;
 }
 
-.rw-swiper .swiper-slide-active .rw-card {
-  height: 650px;
-  /* box-shadow: 2px -1px 9px #ff460c2e, 11px 2px 18px #eb6eff24; */
+/* ✅ featured card bigger (same as your design) */
+.rw-swiper .swiper-slide-next .rw-card {
+  height: 535px;
 }
+
+/* =========================
+   MEDIA
+========================= */
 
 .rw-media {
   position: relative;
-  height: 366px;
+  height: 320px;
   background: #e9e9e9;
   transition: height 0.35s ease;
 }
 
-.rw-swiper .swiper-slide-active .rw-media {
-  height: 516px;
+.rw-swiper .swiper-slide-next .rw-media {
+  height: 390px;
 }
 
 .rw-img {
   object-fit: cover;
 }
+
+/* =========================
+   INFO
+========================= */
 
 .rw-info {
   position: relative;
@@ -119,14 +165,16 @@
   font-family: var(--font-heading);
   opacity: 0.2;
 }
+
 .rw-big::first-letter {
   font-size: 58px;
 }
 
-.rw-swiper .swiper-slide-active .rw-big {
+/* ✅ featured typography bigger */
+.rw-swiper .swiper-slide-next .rw-big {
   font-size: 54px;
 }
-.rw-swiper .swiper-slide-active .rw-big::first-letter {
+.rw-swiper .swiper-slide-next .rw-big::first-letter {
   font-size: 100px;
 }
 
@@ -138,11 +186,14 @@
   font-style: italic;
 }
 
-/* ✅ dots */
+/* =========================
+   DOTS
+========================= */
+
 .rw-swiper .swiper-pagination-bullets {
-  /* bottom: -50px !important;  */
   max-width: 1200px;
 }
+
 .rw-swiper
   .swiper-pagination-bullets
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -159,8 +210,6 @@
 }
 
 .rw-swiper .swiper-pagination-bullet {
-  /* width: 6px;
-  height: 6px; */
   opacity: 0.35;
 }
 
@@ -168,11 +217,515 @@
   opacity: 1;
 }
 
+/* =========================
+   CTA
+========================= */
+
 .rw-cta {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1230px) {
+  .rw-swiper {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+@media (max-width: 992px) {
+  .rw-swiper .swiper-slide {
+    width: 280px;
+  }
+
+  /* ✅ featured (middle) responsive width */
+  .rw-swiper .swiper-slide-next {
+    width: 420px !important;
+    opacity: 1;
+  }
+}
+@media (max-width: 576px) {
+  .rw-swiper {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 90px;
+  }
+
+  .rw-swiper .swiper-slide,
+  .rw-swiper .swiper-slide-next {
+    width: 88% !important;
+    opacity: 1;
+  }
+
+  .rw-swiper .swiper-pagination-bullets {
+    bottom: 22px !important;
+  }
+}
+
+.rw-sec {
+  background: var(--off-white);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rw-outside {
+  overflow: visible;
+}
+
+.rw-slider {
+  position: relative;
+}
+
+/* ✅ right side container-এর বাইরে যাবে */
+.rw-swiper {
+  padding-bottom: 60px !important;
+  overflow: visible !important;
+  width: calc(100% + (100vw - var(--container-width)) / 1);
+  padding-right: calc((100vw - var(--container-width)) / 2);
+}
+
+.rw-swiper .swiper-wrapper {
+  align-items: center;
+  will-change: transform;
+}
+
+/* =========================
+   SLIDES (AUTO WIDTH)
+   ✅ base small
+   ✅ featured = MIDDLE (swiper-slide-next)
+========================= */
+
+.rw-swiper .swiper-slide {
+  width: 380px;
+  display: flex;
+  align-items: center;
+
+  /* ❌ width transition দিবেন না */
+  transition: opacity 0.25s ease;
+  opacity: 0.55;
+}
+
+/* ✅ featured = middle (2nd visible) slide */
+.rw-swiper .swiper-slide-next {
+  width: 520px !important; /* ✅ your custom width */
+  opacity: 1;
+  z-index: 5;
+}
+
+/* ✅ dim left (active) + right (3rd visible) */
+.rw-swiper .swiper-slide-active,
+.rw-swiper .swiper-slide-next + .swiper-slide {
+  opacity: 0.55;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.rw-card {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 460px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+
+  /* ✅ avoid transition: all */
+  transition: all 0.35s ease;
+}
+
+/* ✅ featured card bigger (same as your design) */
+.rw-swiper .swiper-slide-next .rw-card {
+  height: 535px;
+}
+
+/* =========================
+   MEDIA
+========================= */
+
+.rw-media {
+  position: relative;
+  height: 320px;
+  background: #e9e9e9;
+  transition: height 0.35s ease;
+}
+
+.rw-swiper .swiper-slide-next .rw-media {
+  height: 390px;
+}
+
+.rw-img {
+  object-fit: cover;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.rw-info {
+  position: relative;
+  padding: 24px 18px 18px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.rw-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rw-name {
+  max-width: 80%;
+}
+
+.rw-year {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.rw-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.rw-watermark {
+  position: absolute;
+  right: 14px;
+  bottom: 0;
+  text-align: right;
+  pointer-events: none;
+}
+
+.rw-big {
+  display: block;
+  font-size: 32px;
+  line-height: 0.9;
+  font-weight: 800;
+  color: rgba(255, 70, 12, 0.2);
+  font-family: var(--font-heading);
+  opacity: 0.2;
+}
+
+.rw-big::first-letter {
+  font-size: 58px;
+}
+
+/* ✅ featured typography bigger */
+.rw-swiper .swiper-slide-next .rw-big {
+  font-size: 54px;
+}
+.rw-swiper .swiper-slide-next .rw-big::first-letter {
+  font-size: 100px;
+}
+
+.rw-biglabel {
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.rw-swiper .swiper-pagination-bullets {
+  max-width: 1200px;
+}
+
+.rw-swiper
+  .swiper-pagination-bullets
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 32px;
+  height: 4px;
+  border-radius: 4px;
+  background: #000;
+}
+
+.rw-swiper .swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 8px;
+  height: 4px;
+  border-radius: 4px;
+}
+
+.rw-swiper .swiper-pagination-bullet {
+  opacity: 0.35;
+}
+
+.rw-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.rw-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1230px) {
+  .rw-swiper {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+@media (max-width: 992px) {
+  .rw-swiper .swiper-slide {
+    width: 280px;
+  }
+
+  /* ✅ featured (middle) responsive width */
+  .rw-swiper .swiper-slide-next {
+    width: 420px !important;
+    opacity: 1;
+  }
+}
+@media (max-width: 576px) {
+  .rw-swiper {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 90px;
+  }
+
+  .rw-swiper .swiper-slide,
+  .rw-swiper .swiper-slide-next {
+    width: 88% !important;
+    opacity: 1;
+  }
+
+  .rw-swiper .swiper-pagination-bullets {
+    bottom: 22px !important;
+  }
+}
+section.rw-sec h2.uppercase.center {
+  margin-bottom: 40px;
+}
+
+/* ✅ right side container-এর বাইরে যাবে */
+.rw-swiper {
+  padding-bottom: 60px !important;
+  overflow: visible !important;
+  width: calc(100% + (100vw - var(--container-width)) / 1);
+  padding-right: calc((100vw - var(--container-width)) / 2);
+  /* height: 600px; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.rw-swiper .swiper-wrapper {
+  align-items: center;
+  will-change: transform;
+}
+
+/* =========================
+   SLIDES (AUTO WIDTH)
+   ✅ base small
+   ✅ featured = MIDDLE (swiper-slide-next)
+========================= */
+
+.rw-swiper .swiper-slide {
+  width: 380px;
+  display: flex;
+  align-items: center;
+
+  /* ❌ width transition দিবেন না */
+  transition: opacity 0.25s ease;
+  opacity: 0.55;
+}
+
+/* ✅ featured = middle (2nd visible) slide */
+.rw-swiper .swiper-slide-next {
+  width: 520px !important; /* ✅ your custom width */
+  opacity: 1;
+  z-index: 5;
+}
+
+/* ✅ dim left (active) + right (3rd visible) */
+.rw-swiper .swiper-slide-active,
+.rw-swiper .swiper-slide-next + .swiper-slide {
+  opacity: 0.55;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.rw-card {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 460px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+
+  /* ✅ avoid transition: all */
+  transition: all 0.35s ease;
+}
+
+/* ✅ featured card bigger (same as your design) */
+.rw-swiper .swiper-slide-next .rw-card {
+  height: 535px;
+}
+
+/* =========================
+   MEDIA
+========================= */
+
+.rw-media {
+  position: relative;
+  height: 320px;
+  background: #e9e9e9;
+  transition: height 0.35s ease;
+}
+
+.rw-swiper .swiper-slide-next .rw-media {
+  height: 390px;
+}
+
+.rw-img {
+  object-fit: cover;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.rw-info {
+  position: relative;
+  padding: 24px 18px 18px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.rw-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rw-name {
+  max-width: 80%;
+}
+
+.rw-year {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.rw-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.rw-watermark {
+  position: absolute;
+  right: 14px;
+  bottom: 0;
+  text-align: right;
+  pointer-events: none;
+}
+
+.rw-big {
+  display: block;
+  font-size: 32px;
+  line-height: 0.9;
+  font-weight: 800;
+  color: rgba(255, 70, 12, 0.2);
+  font-family: var(--font-heading);
+  opacity: 0.2;
+}
+
+.rw-big::first-letter {
+  font-size: 58px;
+}
+
+/* ✅ featured typography bigger */
+.rw-swiper .swiper-slide-next .rw-big {
+  font-size: 54px;
+}
+.rw-swiper .swiper-slide-next .rw-big::first-letter {
+  font-size: 100px;
+}
+
+.rw-biglabel {
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.rw-swiper .swiper-pagination-bullets {
+  max-width: 1200px;
+}
+
+.rw-swiper
+  .swiper-pagination-bullets
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 32px;
+  height: 4px;
+  border-radius: 4px;
+  background: #000;
+}
+
+.rw-swiper .swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 8px;
+  height: 4px;
+  border-radius: 4px;
+}
+
+.rw-swiper .swiper-pagination-bullet {
+  opacity: 0.35;
+}
+
+.rw-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.rw-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 1230px) {
   .rw-swiper {
@@ -185,8 +738,11 @@
   .rw-swiper .swiper-slide {
     width: 280px;
   }
-  .rw-swiper .swiper-slide-active {
-    width: 420px;
+
+  /* ✅ featured (middle) responsive width */
+  .rw-swiper .swiper-slide-next {
+    width: 420px !important;
+    opacity: 1;
   }
 }
 
@@ -199,8 +755,9 @@
   }
 
   .rw-swiper .swiper-slide,
-  .rw-swiper .swiper-slide-active {
-    width: 88%;
+  .rw-swiper .swiper-slide-next {
+    width: 88% !important;
+    opacity: 1;
   }
 
   .rw-swiper .swiper-pagination-bullets {
@@ -210,4 +767,13 @@
 
 section.rw-sec h2.uppercase.center {
   margin-bottom: 40px;
+}
+
+.rw-slider {
+}
+
+section.rw-sec .swiper-wrapper {
+  height: 540px;
+  /* display: flex; */
+  /* align-items: center; */
 }
