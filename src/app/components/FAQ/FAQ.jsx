@@ -27,10 +27,11 @@ const FAQS = [
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0); // first open
+  // ✅ always keep one open
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggle = (idx) => {
-    setOpenIndex((prev) => (prev === idx ? -1 : idx));
+    if (openIndex !== idx) setOpenIndex(idx);
   };
 
   return (
@@ -58,7 +59,7 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                {/* Pure CSS Slider Animation */}
+                {/* ✅ Smooth slide like your Tailwind version */}
                 <div className={`faq-a ${isOpen ? "open" : ""}`}>
                   <div className="faq-a-inner">
                     <p className="faq-atext text5">{item.a}</p>
