@@ -777,3 +777,119 @@ section.rw-sec .swiper-wrapper {
   /* display: flex; */
   /* align-items: center; */
 }
+
+/* ==========================================
+   FEATURED SLIDE: FIGMA GRADIENT GLOW ORBIT (FULL FINAL)
+   ✅ Gradient: #EB6EFF -> #FF460C
+   ✅ Blur: 62px (Figma)
+   ✅ Orbit: Top/Right/Bottom/Left visible
+   ✅ Only for Featured slide (.swiper-slide-next)
+========================================== */
+
+.rw-swiper .swiper-slide-next {
+  position: relative;
+  z-index: 6;
+  overflow: visible;
+}
+
+/* keep card above glow */
+.rw-swiper .swiper-slide-next .rw-card {
+  position: relative;
+  z-index: 3;
+}
+
+/* ✅ MAIN GLOW */
+.rw-swiper .swiper-slide-next::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  /* ✅ glow size (balanced for all sides) */
+  width: 420px;
+  height: 340px;
+
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+
+  /* ✅ Figma linear gradient */
+  background: linear-gradient(90deg, #eb6eff 0%, #ff460c 100%);
+
+  /* ✅ Figma blur */
+  filter: blur(62px);
+
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+
+  animation: rwGlowOrbit 3.4s linear infinite;
+}
+
+/* ✅ SECONDARY GLOW (adds depth) */
+.rw-swiper .swiper-slide-next::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 320px;
+  height: 280px;
+
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #eb6eff 0%, #ff460c 100%);
+  filter: blur(62px);
+
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+
+  animation: rwGlowOrbitReverse 4.8s linear infinite;
+}
+
+/* ✅ FULL ORBIT (top/right/bottom/left) */
+@keyframes rwGlowOrbit {
+  0% {
+    transform: translate(-50%, -50%) translate(0px, -95px);
+  }
+  25% {
+    transform: translate(-50%, -50%) translate(95px, 0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(0px, 95px);
+  }
+  75% {
+    transform: translate(-50%, -50%) translate(-95px, 0px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(0px, -95px);
+  }
+}
+
+/* ✅ Reverse orbit for dynamic look */
+@keyframes rwGlowOrbitReverse {
+  0% {
+    transform: translate(-50%, -50%) translate(0px, 85px);
+  }
+  25% {
+    transform: translate(-50%, -50%) translate(-85px, 0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(0px, -85px);
+  }
+  75% {
+    transform: translate(-50%, -50%) translate(85px, 0px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(0px, 85px);
+  }
+}
+
+/* ✅ reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  .rw-swiper .swiper-slide-next::before,
+  .rw-swiper .swiper-slide-next::after {
+    animation: none;
+  }
+}
