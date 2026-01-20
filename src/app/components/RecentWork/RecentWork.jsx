@@ -79,19 +79,19 @@ export default function RecentWork() {
               onSwiper={(sw) => (swiperRef.current = sw)}
               slidesPerView="auto"
               spaceBetween={20}
+              centeredSlides={false} // ✅ SS-এর মতো: featured right-most
               loop={true}
               speed={650}
               grabCursor={true}
-              centeredSlides={false} // ✅ SS-এর মতো: featured right-most
               watchSlidesProgress={true}
               observer={true}
               observeParents={true}
               updateOnWindowResize={true}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-              }}
+              // autoplay={{
+              //   delay: 5000,
+              //   disableOnInteraction: false,
+              //   pauseOnMouseEnter: false,
+              // }}
               pagination={{ clickable: true }}
               className="rw-swiper"
             >

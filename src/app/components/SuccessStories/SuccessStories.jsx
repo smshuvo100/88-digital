@@ -61,18 +61,21 @@ export default function SuccessStories() {
         <Swiper
           modules={[Pagination, Autoplay]}
           slidesPerView="auto" // ✅ CSS will control widths
-          spaceBetween={20}
+          spaceBetween={10}
           centeredSlides={false} // ✅ active center
           loop={true}
+          speed={650}
           grabCursor={true}
           watchSlidesProgress={true}
+          observer={true}
+          observeParents={true}
+          updateOnWindowResize={true}
+          // autoplay={{
+          //   delay: 5000, // ✅ autoplay speed (2.5s)
+          //   disableOnInteraction: false, // ✅ swipe করলে থামবে না
+          //   pauseOnMouseEnter: true, // ✅ hover করলে pause হবে
+          // }}
           pagination={{ clickable: true }}
-          autoplay={{
-            delay: 5000, // ✅ autoplay speed (2.5s)
-            disableOnInteraction: false, // ✅ swipe করলে থামবে না
-            pauseOnMouseEnter: true, // ✅ hover করলে pause হবে
-          }}
-          speed={750}
           className="ss-swiper"
         >
           {items.map((it) => (
