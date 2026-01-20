@@ -58,6 +58,7 @@
   justify-content: center;
   opacity: 0.55;
   transition: opacity 0.25s ease;
+  /* transition: all 0.45s ease-in-out !important; */
 }
 
 /* ✅ NEW FEATURED:
@@ -90,8 +91,12 @@
   /* box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06); */
   backdrop-filter: blur(10px);
   min-height: 403px;
-  transition: min-height 0.35s ease, box-shadow 0.35s ease,
-    background 0.35s ease;
+  /* transition:
+    min-height 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease; */
+  transition: all 0.45s ease-in-out !important;
+  will-change: all;
 }
 
 /* ✅ featured card bigger (NEXT slide) */

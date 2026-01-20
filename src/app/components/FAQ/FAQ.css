@@ -32,6 +32,9 @@
 /* =========================
    ITEM BASE (CLOSED)
 ========================= */
+.faq-wrap {
+  height: 400px;
+}
 
 .faq-item {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -39,7 +42,8 @@
   background: transparent;
 
   /* ✅ Tailwind version like smooth */
-  transition: background var(--faq-speed) var(--faq-ease),
+  transition:
+    background var(--faq-speed) var(--faq-ease),
     margin var(--faq-speed) var(--faq-ease),
     border-color var(--faq-speed) var(--faq-ease),
     box-shadow var(--faq-speed) var(--faq-ease),
@@ -75,7 +79,8 @@
   color: rgba(0, 0, 0, 0.75);
   font-family: var(--font-body);
 
-  transition: color var(--faq-speed) var(--faq-ease),
+  transition:
+    color var(--faq-speed) var(--faq-ease),
     font-size var(--faq-speed) var(--faq-ease),
     line-height var(--faq-speed) var(--faq-ease),
     font-weight var(--faq-speed) var(--faq-ease);
@@ -86,7 +91,8 @@
   line-height: 1;
   color: rgba(0, 0, 0, 0.65);
 
-  transition: color var(--faq-speed) var(--faq-ease),
+  transition:
+    color var(--faq-speed) var(--faq-ease),
     transform var(--faq-speed) var(--faq-ease);
 }
 
@@ -113,7 +119,8 @@
   opacity: 0;
   transform: translateY(-8px);
 
-  transition: opacity var(--faq-speed) var(--faq-ease),
+  transition:
+    opacity var(--faq-speed) var(--faq-ease),
     transform var(--faq-speed) var(--faq-ease),
     padding var(--faq-speed) var(--faq-ease),
     color var(--faq-speed) var(--faq-ease);
