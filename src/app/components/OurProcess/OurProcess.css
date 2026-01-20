@@ -9,6 +9,7 @@ section.op-sec h4.op-step img {
   height: 45px !important;
   width: auto !important;
 }
+
 .op-sec {
   background: #010309;
   padding: 70px 0;
@@ -65,15 +66,28 @@ section.op-sec h4.op-step img {
   line-height: 1.6;
 }
 
+.op-left .text4 {
+  color: #c9c8c8;
+}
+
 /* only desktop/tablet: reverse layout for odd slides */
 .op-box.op-box-reverse {
   flex-direction: row-reverse !important;
 }
 
+/* ✅ FADE IN / FADE OUT Smooth */
+.op-swiper .swiper-slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.op-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
-
 @media (max-width: 992px) {
   .op-box {
     flex-direction: column;
@@ -96,8 +110,4 @@ section.op-sec h4.op-step img {
   .op-img {
     object-position: center;
   }
-}
-
-.op-left .text4 {
-  color: #c9c8c8;
 }

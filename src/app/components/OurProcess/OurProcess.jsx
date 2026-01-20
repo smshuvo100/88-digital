@@ -4,11 +4,10 @@ import "./OurProcess.css";
 import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules"; // ✅ Autoplay add
+import { Autoplay, EffectFade } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 const processSlides = [
   {
@@ -25,7 +24,7 @@ const processSlides = [
   },
   {
     stepIcon: "/assets/i4.svg",
-    title: "Analyze ",
+    title: "Analyze",
     desc: "Helping entrepreneurs turn their visions into proven business models with professional guidance.",
     image: "/assets/our-process3.png",
   },
@@ -85,14 +84,17 @@ export default function OurProcess() {
 
         <div className="op-swiper-wrap">
           <Swiper
-            modules={[Autoplay]} // ✅ add
+            modules={[Autoplay, EffectFade]}
             slidesPerView={1}
             spaceBetween={0}
-            loop={true} // ✅ loop on
+            loop={true}
+            effect="fade"
+            fadeEffect={{ crossFade: true }}
+            speed={1000} // ✅ fade animation speed
             autoplay={{
-              delay: 2500, // ✅ speed
-              disableOnInteraction: false, // ✅ click করলে autoplay বন্ধ হবে না
-              pauseOnMouseEnter: true, // ✅ hover করলে pause (optional)
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             className="op-swiper"
           >

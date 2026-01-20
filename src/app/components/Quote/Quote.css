@@ -1,9 +1,41 @@
 .quote-sec {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 24px 0; /* ✅ কম padding = কম ফাঁকা */
   text-align: center;
 }
 
 .quote-sec .btn {
-  margin-top: 40px;
+  margin-top: 18px;
+}
+
+/* .quote-text {
+  display: inline-block;
+  font-size: clamp(38px, 5vw, 82px); 
+  font-weight: 600;
+  line-height: 1.08;
+} */
+
+/* ✅ তোমার gradient unchanged */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* lines */
+.q-line {
+  display: block;
+  overflow: hidden;
+}
+
+/* ✅ apply same gradient so text never disappears */
+.q-line-inner {
+  display: inline-block;
+  will-change: transform, opacity;
+
+  background: var(--gradient-primary);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
