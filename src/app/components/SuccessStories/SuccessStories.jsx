@@ -67,11 +67,11 @@ export default function SuccessStories() {
           grabCursor={true}
           watchSlidesProgress={true}
           pagination={{ clickable: true }}
-          // autoplay={{
-          //   delay: 5000, // ✅ autoplay speed (2.5s)
-          //   disableOnInteraction: false, // ✅ swipe করলে থামবে না
-          //   pauseOnMouseEnter: true, // ✅ hover করলে pause হবে
-          // }}
+          autoplay={{
+            delay: 5000, // ✅ autoplay speed (2.5s)
+            disableOnInteraction: false, // ✅ swipe করলে থামবে না
+            pauseOnMouseEnter: true, // ✅ hover করলে pause হবে
+          }}
           speed={750}
           className="ss-swiper"
         >
