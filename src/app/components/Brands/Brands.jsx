@@ -14,7 +14,7 @@ export default function Brands() {
   const track = Array.from({ length: 12 }, (_, i) => logos[i % logos.length]);
 
   return (
-    <section className="brands-sec">
+    <section id="next-section" className="brands-sec">
       <div className="brands-wrap">
         <p className="text3">We worked with powerful brands</p>
 

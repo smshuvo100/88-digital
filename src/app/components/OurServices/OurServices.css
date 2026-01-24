@@ -82,7 +82,8 @@ section.os-sec h2.uppercase {
   /* box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1); */
   /* backdrop-filter: blur(10px); */
   padding: 26px 22px;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(12, 97, 255, 0.25) 0%,
       rgba(236, 110, 255, 0.25) 85%
@@ -106,6 +107,7 @@ section.os-sec h2.uppercase {
   /* margin-top: 70px; */
   position: relative;
   z-index: 2;
+  margin-bottom: 20px;
 }
 
 /* learn more */
@@ -121,7 +123,9 @@ section.os-sec h2.uppercase {
   /* z-index: 2; */
   margin-top: 35px;
 }
-
+.os-link svg {
+  color: rgb(255, 70, 14);
+}
 .os-arrow {
   font-size: 18px;
   line-height: 1;

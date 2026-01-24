@@ -33,7 +33,14 @@ export default function HomeHero() {
                   to perfection.
                 </p>
 
-                <div className="scroll">
+                <div
+                  className="scroll"
+                  onClick={() =>
+                    document.getElementById("next-section")?.scrollIntoView({
+                      behavior: "smooth",
+                    })
+                  }
+                >
                   <p className="text3">Scroll to Feel the Heat</p>
                   <BsArrowDown />
                 </div>

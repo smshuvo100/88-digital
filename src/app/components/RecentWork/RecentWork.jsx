@@ -3,6 +3,7 @@
 import "./RecentWork.css";
 import Image from "next/image";
 import { useRef } from "react";
+import { BsArrowRight } from "react-icons/bs";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -87,11 +88,11 @@ export default function RecentWork() {
               observer={true}
               observeParents={true}
               updateOnWindowResize={true}
-              // autoplay={{
-              //   delay: 5000,
-              //   disableOnInteraction: false,
-              //   pauseOnMouseEnter: false,
-              // }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false,
+              }}
               pagination={{ clickable: true }}
               className="rw-swiper"
             >
@@ -114,12 +115,14 @@ export default function RecentWork() {
                         <span className="rw-year">{it.year}</span>
                       </div>
 
-                      <a
-                        className="rw-link text4 uppercase gradient-text"
-                        href="#"
-                      >
-                        VIEW FULL PROJECT <span className="rw-arrow">→</span>
-                      </a>
+                      <div className="btn btn2">
+                        <a href="#">
+                          <span className="gradient-text">
+                            VIEW FULL PROJECT
+                          </span>
+                          <BsArrowRight />
+                        </a>
+                      </div>
 
                       <div className="rw-watermark">
                         <span className="rw-big gradient-text">{it.big}</span>
@@ -141,7 +144,7 @@ export default function RecentWork() {
           <div className="btn">
             <a href="#">
               <span>VIEW ALL PROJECTS</span>
-              <span aria-hidden="true">→</span>
+              <BsArrowRight />
             </a>
           </div>
         </div>

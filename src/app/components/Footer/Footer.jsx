@@ -3,7 +3,8 @@
 import "./Footer.css";
 import Image from "next/image";
 import { BsArrowRight } from "react-icons/bs";
-import { FaFacebookF, FaWhatsapp, FaDribbble } from "react-icons/fa";
+import { FaFacebookF, FaWhatsapp, FaSnapchatGhost } from "react-icons/fa";
+import { BsArrowDown, BsArrowUp } from "react-icons/bs";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -21,11 +22,13 @@ export default function Footer() {
         </h2>
 
         {/* CTA */}
-        <div className="btn">
-          <a className="ft-cta-btn" href="#">
-            <span>LET’S TALK</span>
-            <BsArrowRight />
-          </a>
+        <div className="ft-cta">
+          <div className="btn">
+            <a className="ft-cta-btn" href="#">
+              <span>LET’S TALK</span>
+              <BsArrowRight />
+            </a>
+          </div>
         </div>
 
         {/* logo + tagline */}
@@ -48,7 +51,7 @@ export default function Footer() {
               <FaWhatsapp />
             </a>
             <a href="#" aria-label="Dribbble" className="ft-social-btn">
-              <FaDribbble />
+              <FaSnapchatGhost />
             </a>
           </div>
         </div>
@@ -66,7 +69,7 @@ export default function Footer() {
           aria-label="Scroll to top"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <span className="ft-top-arrow" aria-hidden="true" />
+          <BsArrowUp />
         </button>
       </div>
     </footer>

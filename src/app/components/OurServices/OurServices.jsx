@@ -3,6 +3,7 @@
 import "./OurServices.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import { BsArrowRight } from "react-icons/bs";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -55,9 +56,12 @@ export default function OurServices() {
                   <article className="os-card">
                     <h3 className="os-title">{it.title}</h3>
 
-                    <a className="os-link uppercase gradient-text" href="#">
-                      LEARN MORE <span className="os-arrow">→</span>
-                    </a>
+                    <div className="btn btn2">
+                      <a href="#">
+                        <span className="gradient-text">VIEW FULL PROJECT</span>
+                        <BsArrowRight />
+                      </a>
+                    </div>
 
                     {/* light watermark behind text */}
                     <div className="os-water" aria-hidden="true">
@@ -76,7 +80,7 @@ export default function OurServices() {
           <div className="btn">
             <a href="#">
               <span>VIEW ALL SERVICES</span>
-              <span aria-hidden="true">→</span>
+              <BsArrowRight />
             </a>
           </div>
         </div>
