@@ -1,6 +1,9 @@
 /* =========================
    OUR SERVICES (same as RecentWork)
 ========================= */
+.os-sec .os-swiper.swiper {
+  overflow: visible;
+}
 
 .os-sec {
   background: var(--off-white);
@@ -56,7 +59,7 @@ section.os-sec h2.uppercase {
 
 /* ✅ IMPORTANT: NO active bigger. All same width */
 .os-swiper .swiper-slide {
-  width: 310px; /* adjust if you want 4 visible like figma */
+  width: 330px; /* adjust if you want 4 visible like figma */
   display: flex;
 }
 

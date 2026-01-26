@@ -72,7 +72,7 @@ section.rw-sec h5.rw-name {
 
   /* ❌ width transition দিবেন না */
   transition: opacity 0.25s ease;
-  opacity: 0.55;
+  /* opacity: 0.55; */
 }
 
 /* ✅ featured = middle (2nd visible) slide */
@@ -85,7 +85,7 @@ section.rw-sec h5.rw-name {
 /* ✅ dim left (active) + right (3rd visible) */
 .rw-swiper .swiper-slide-active,
 .rw-swiper .swiper-slide-next + .swiper-slide {
-  opacity: 0.55;
+  /* opacity: 0.55; */
 }
 
 /* =========================
@@ -314,7 +314,7 @@ section.rw-sec h5.rw-name {
 
   /* ❌ width transition দিবেন না */
   transition: opacity 0.25s ease;
-  opacity: 0.55;
+  /* opacity: 0.55; */
 }
 
 /* ✅ featured = middle (2nd visible) slide */
@@ -327,7 +327,7 @@ section.rw-sec h5.rw-name {
 /* ✅ dim left (active) + right (3rd visible) */
 .rw-swiper .swiper-slide-active,
 .rw-swiper .swiper-slide-next + .swiper-slide {
-  opacity: 0.55;
+  /* opacity: 0.55; */
 }
 
 /* =========================
@@ -557,7 +557,7 @@ section.rw-sec h2.uppercase.center {
 
   /* ❌ width transition দিবেন না */
   transition: opacity 0.25s ease;
-  opacity: 0.55;
+  /* opacity: 0.55; */
 }
 
 /* ✅ featured = middle (2nd visible) slide */
@@ -570,7 +570,7 @@ section.rw-sec h2.uppercase.center {
 /* ✅ dim left (active) + right (3rd visible) */
 .rw-swiper .swiper-slide-active,
 .rw-swiper .swiper-slide-next + .swiper-slide {
-  opacity: 0.55;
+  /* opacity: 0.55; */
 }
 
 /* =========================
@@ -806,6 +806,7 @@ section.rw-sec .swiper-wrapper {
 .rw-swiper .swiper-slide-next .rw-card {
   position: relative;
   z-index: 3;
+  background: #fff;
 }
 
 /* ✅ MAIN GLOW (single) */
