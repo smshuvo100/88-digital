@@ -8,7 +8,7 @@
 :root {
   /* --faq-ease: cubic-bezier(0.4, 0, 0.2, 1); */
   --faq-ease: ease;
-  --faq-speed: 1000ms;
+  --faq-speed: 2000ms;
 }
 
 /* section */
