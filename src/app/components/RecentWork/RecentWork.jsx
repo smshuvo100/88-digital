@@ -88,11 +88,11 @@ export default function RecentWork() {
               observer={true}
               observeParents={true}
               updateOnWindowResize={true}
-              // autoplay={{
-              //   delay: 5000,
-              //   disableOnInteraction: false,
-              //   pauseOnMouseEnter: false,
-              // }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false,
+              }}
               pagination={{ clickable: true }}
               className="rw-swiper"
             >
