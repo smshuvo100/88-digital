@@ -664,7 +664,7 @@ section.rw-sec h2.uppercase.center {
   font-weight: 800;
   color: rgba(255, 70, 12, 0.2);
   font-family: var(--font-heading);
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .rw-big::first-letter {
@@ -685,6 +685,10 @@ section.rw-sec h2.uppercase.center {
   font-size: 16px;
   font-weight: 400;
   font-style: italic;
+  position: absolute;
+  right: 0;
+  top: -8px;
+  width: 110px;
 }
 
 /* =========================
@@ -880,4 +884,8 @@ section.rw-sec .swiper-wrapper {
 .rw-sec .btn.btn2 a {
   width: auto;
   padding: 10px 10px;
+}
+
+.rw-swiper .swiper-slide-next .rw-biglabel {
+  top: 30px;
 }

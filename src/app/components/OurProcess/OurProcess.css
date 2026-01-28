@@ -12,7 +12,7 @@ section.op-sec h4.op-step img {
 
 .op-sec {
   background: #010309;
-  padding: 70px 0;
+  padding: 70px 0 100px 0;
   overflow: hidden;
 }
 
@@ -35,6 +35,9 @@ section.op-sec h4.op-step img {
 .op-left {
   width: 43%;
   z-index: 2;
+  /* margin-top: -60px; */
+  position: relative;
+  top: -30px;
 }
 
 .op-step {

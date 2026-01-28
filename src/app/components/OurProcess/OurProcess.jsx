@@ -91,11 +91,11 @@ export default function OurProcess() {
             effect="fade"
             fadeEffect={{ crossFade: true }}
             speed={1000} // ✅ fade animation speed
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
+            // autoplay={{
+            //   delay: 2500,
+            //   disableOnInteraction: false,
+            //   pauseOnMouseEnter: true,
+            // }}
             className="op-swiper"
           >
             {processSlides.map((item, idx) => (

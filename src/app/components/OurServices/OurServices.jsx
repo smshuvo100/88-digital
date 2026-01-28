@@ -24,7 +24,7 @@ export default function OurServices() {
   return (
     <section className="os-sec">
       <div className="container">
-        <h2 className="uppercase">OUR SERVICES</h2>
+        <h2 className="uppercase center">OUR SERVICES</h2>
       </div>
 
       {/* ✅ EXACT like RecentWork: overflow on RIGHT only */}

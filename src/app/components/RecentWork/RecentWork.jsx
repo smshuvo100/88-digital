@@ -27,7 +27,7 @@ export default function RecentWork() {
       id: 2,
       title: "Data Analytics Dashboard",
       img: "/assets/work2.jpg",
-      big: "40%",
+      big: "30%",
       bigLabel: "Sales Revenue",
       year: "2025",
     },
@@ -35,7 +35,7 @@ export default function RecentWork() {
       id: 3,
       title: "Mobile Banking Reinvented",
       img: "/assets/work3.jpg",
-      big: "40%",
+      big: "50%",
       bigLabel: "Sales Revenue",
       year: "2025",
     },
@@ -43,7 +43,7 @@ export default function RecentWork() {
       id: 4,
       title: "DIEGO’S Bags – Mobile App",
       img: "/assets/work4.jpg",
-      big: "40%",
+      big: "60%",
       bigLabel: "Sales Revenue",
       year: "2025",
     },
@@ -51,7 +51,7 @@ export default function RecentWork() {
       id: 5,
       title: "Data Analytics Dashboard",
       img: "/assets/work1.jpg",
-      big: "40%",
+      big: "70%",
       bigLabel: "Sales Revenue",
       year: "2025",
     },
@@ -59,7 +59,7 @@ export default function RecentWork() {
       id: 6,
       title: "Mobile Banking Reinvented",
       img: "/assets/work2.jpg",
-      big: "40%",
+      big: "80%",
       bigLabel: "Sales Revenue",
       year: "2025",
     },
@@ -88,11 +88,11 @@ export default function RecentWork() {
               observer={true}
               observeParents={true}
               updateOnWindowResize={true}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-              }}
+              // autoplay={{
+              //   delay: 5000,
+              //   disableOnInteraction: false,
+              //   pauseOnMouseEnter: false,
+              // }}
               pagination={{ clickable: true }}
               className="rw-swiper"
             >
