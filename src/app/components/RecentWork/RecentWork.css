@@ -828,7 +828,7 @@ section.rw-sec .swiper-wrapper {
   pointer-events: none;
   z-index: 1;
 
-  animation: rwGlowOrbit 3.4s linear infinite;
+  animation: rwGlowOrbit 4.4s linear infinite;
 }
 
 /* ✅ ORBIT (corners included) */
@@ -876,4 +876,8 @@ section.rw-sec .swiper-wrapper {
   .rw-swiper .swiper-slide-next::before {
     animation: none;
   }
+}
+.rw-sec .btn.btn2 a {
+  width: auto;
+  padding: 10px 10px;
 }
