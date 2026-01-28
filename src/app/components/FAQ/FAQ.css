@@ -6,7 +6,8 @@
 ========================= */
 
 :root {
-  --faq-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  /* --faq-ease: cubic-bezier(0.4, 0, 0.2, 1); */
+  --faq-ease: ease;
   --faq-speed: 1000ms;
 }
 
@@ -33,7 +34,7 @@
    ITEM BASE (CLOSED)
 ========================= */
 .faq-wrap {
-  height: 400px;
+  height: 450px;
 }
 
 .faq-item {
@@ -50,6 +51,7 @@
     border-radius var(--faq-speed) var(--faq-ease);
 
   will-change: margin, background-color;
+  /* transition: all var(--faq-speed) var(--faq-ease); */
 }
 
 /* =========================

@@ -4,9 +4,9 @@ import "./Brands.css";
 export default function Brands() {
   // আপনার ৩টা logo
   const logos = [
-    { src: "/assets/brand1.png", alt: "Brand 1" },
-    { src: "/assets/brand2.png", alt: "Brand 2" },
-    { src: "/assets/brand3.png", alt: "Brand 3" },
+    { src: "/assets/br1.png", alt: "Brand 1" },
+    { src: "/assets/br2.png", alt: "Brand 2" },
+    { src: "/assets/br3.png", alt: "Brand 3" },
   ];
 
   // ৮টা দেখাতে + smooth loop করতে আমরা list repeat করে দুইটা track বানাব
@@ -25,8 +25,8 @@ export default function Brands() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={200}
-                  height={46}
+                  width={500}
+                  height={500}
                   className="brand-img"
                 />
               </div>
@@ -38,8 +38,8 @@ export default function Brands() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={200}
-                  height={46}
+                  width={500}
+                  height={500}
                   className="brand-img"
                 />
               </div>

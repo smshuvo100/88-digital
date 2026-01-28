@@ -63,12 +63,12 @@ export default function Quote() {
         // ✅ No pin → no extra whitespace
         st = ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 85%",
-          end: "top 55%", // ✅ short scroll distance (fast feel)
+          start: "top 55%",
+          end: "top 25%", // ✅ short scroll distance (fast feel)
           scrub: true,
           pin: false, // ✅ IMPORTANT
           animation: tl,
-          // markers: true,
+          //markers: true,
         });
 
         requestAnimationFrame(() => ScrollTrigger.refresh());
@@ -85,7 +85,7 @@ export default function Quote() {
   return (
     <section className="quote-sec" ref={sectionRef}>
       <div className="container">
-        <p ref={textRef} className="text1 italic quote-text gradient-text">
+        <p ref={textRef} className="text1 quote-text gradient-text">
           &ldquo;We help aspiring entrepreneurs turn their ideas into successful
           Business&rdquo;
         </p>

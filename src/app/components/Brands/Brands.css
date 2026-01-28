@@ -21,7 +21,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 54px; /* screenshot like */
+  /* height: 54px; */ /* screenshot like */
 }
 
 /* fade edges (nice like figma) */
@@ -75,13 +75,13 @@
   align-items: center;
   justify-content: center;
   min-width: 140px; /* logo block width */
-  height: 44px;
+  /* height: 44px; */
   opacity: 0.95;
 }
 
 .brand-img {
   width: auto;
-  height: 46px; /* keep same height like screenshot */
+  height: 50px; /* keep same height like screenshot */
   object-fit: contain;
 }
 

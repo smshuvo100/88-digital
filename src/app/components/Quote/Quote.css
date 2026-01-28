@@ -14,15 +14,6 @@
   line-height: 1.08;
 } */
 
-/* ✅ তোমার gradient unchanged */
-.gradient-text {
-  background: var(--gradient-primary);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  display: inline-block;
-}
-
 /* lines */
 .q-line {
   display: block;
@@ -38,4 +29,10 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+section.quote-sec p {
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 90px;
 }
