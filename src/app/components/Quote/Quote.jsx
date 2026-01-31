@@ -63,7 +63,7 @@ export default function Quote() {
         // ✅ No pin → no extra whitespace
         st = ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 40%",
+          start: "top 85%",
           end: "top 15%", // ✅ short scroll distance (fast feel)
           scrub: true,
           pin: false, // ✅ IMPORTANT
