@@ -8,7 +8,7 @@
 :root {
   /* --faq-ease: cubic-bezier(0.4, 0, 0.2, 1); */
   --faq-ease: ease;
-  --faq-speed: 2000ms;
+  --faq-speed: 3000ms;
 }
 
 /* section */
@@ -110,19 +110,6 @@
 
 .faq-a-inner {
   overflow: hidden;
-}
-
-/* answer text closed */
-.faq-atext {
-  padding: 0 16px 18px;
-  color: rgba(0, 0, 0, 0.6);
-  /* opacity: 0; */
-  /* transform: translateY(-8px); */
-  /* transition:
-    opacity var(--faq-speed) var(--faq-ease),
-    transform var(--faq-speed) var(--faq-ease),
-    padding var(--faq-speed) var(--faq-ease),
-    color var(--faq-speed) var(--faq-ease); */
   transition: all var(--faq-speed) var(--faq-ease);
 }
 
@@ -166,11 +153,24 @@
   grid-template-rows: 1fr;
   transition: all var(--faq-speed) var(--faq-ease);
 }
+/* answer text closed */
+.faq-atext {
+  padding: 0 16px 18px;
+  color: rgba(0, 0, 0, 0.6);
+  /* opacity: 0; */
+  transform: translateY(-10px);
+  /* transition:
+    opacity var(--faq-speed) var(--faq-ease),
+    transform var(--faq-speed) var(--faq-ease),
+    padding var(--faq-speed) var(--faq-ease),
+    color var(--faq-speed) var(--faq-ease); */
+  transition: all var(--faq-speed) var(--faq-ease);
+}
 
 /* answer open text */
 .faq-a.open .faq-atext {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0px);
   color: rgba(255, 255, 255, 0.75);
   padding: 0 18px 30px;
   transition: all var(--faq-speed) var(--faq-ease);

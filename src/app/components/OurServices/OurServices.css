@@ -224,3 +224,8 @@ section.os-sec h2.uppercase {
     justify-content: center;
   }
 }
+
+.os-sec .btn.btn2 a {
+  width: auto;
+  padding: 10px;
+}

@@ -217,9 +217,9 @@ h6 {
   background: transparent;
   width: 100%;
 }
-.btn.btn2 a:hover {
+/* .btn.btn2 a:hover {
   padding: 10px 0 10px 15px;
-}
+} */
 .btn.btn2 a svg {
   color: #eb6eff;
   font-size: 18px !important;
