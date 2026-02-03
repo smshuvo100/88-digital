@@ -8,7 +8,7 @@
 :root {
   /* --faq-ease: cubic-bezier(0.4, 0, 0.2, 1); */
   --faq-ease: ease;
-  --faq-speed: 3000ms;
+  --faq-speed: 500ms;
 }
 
 /* section */
@@ -41,15 +41,15 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   background: transparent;
 
-  /* ✅ Tailwind version like smooth */
-  /* transition:
-    background var(--faq-speed) var(--faq-ease),
+  /* ✅ FIX: transition: all বাদ -> only needed props */
+  transition:
+    background-color var(--faq-speed) var(--faq-ease),
     margin var(--faq-speed) var(--faq-ease),
     border-color var(--faq-speed) var(--faq-ease),
     box-shadow var(--faq-speed) var(--faq-ease),
-    border-radius var(--faq-speed) var(--faq-ease); */
+    border-radius var(--faq-speed) var(--faq-ease);
+  /* optional: micro-smooth */
   /* will-change: margin, background-color; */
-  transition: all var(--faq-speed) var(--faq-ease);
 }
 
 /* =========================
@@ -67,7 +67,12 @@
   gap: 18px;
   cursor: pointer;
   text-align: left;
-  transition: all var(--faq-speed) var(--faq-ease);
+
+  /* ✅ FIX: transition: all বাদ -> only needed props */
+  transition:
+    padding var(--faq-speed) var(--faq-ease),
+    color var(--faq-speed) var(--faq-ease);
+
   font-size: 16px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.75);
@@ -75,16 +80,12 @@
 }
 
 .faq-qtext {
-  /* font-size: 16px; */
-  /* font-weight: 400; */
-  /* color: rgba(0, 0, 0, 0.75); */
-  /* font-family: var(--font-body); */
-  /* transition:
+  /* ✅ FIX: transition: all বাদ -> only needed props (তোমার comment থাকা props) */
+  transition:
     color var(--faq-speed) var(--faq-ease),
     font-size var(--faq-speed) var(--faq-ease),
     line-height var(--faq-speed) var(--faq-ease),
-    font-weight var(--faq-speed) var(--faq-ease); */
-  transition: all var(--faq-speed) var(--faq-ease);
+    font-weight var(--faq-speed) var(--faq-ease);
 }
 
 .faq-icon {
@@ -105,12 +106,15 @@
 .faq-a {
   display: grid;
   grid-template-rows: 0fr;
-  transition: all var(--faq-speed) var(--faq-ease);
+
+  /* ✅ FIX: transition: all বাদ */
+  transition: grid-template-rows var(--faq-speed) var(--faq-ease);
 }
 
 .faq-a-inner {
   overflow: hidden;
-  transition: all var(--faq-speed) var(--faq-ease);
+  /* ✅ FIX: transition: all বাদ (এখানে দরকার নেই, remove করলেও design বদলাবে না) */
+  /* transition: all var(--faq-speed) var(--faq-ease); */
 }
 
 /* =========================
@@ -123,57 +127,77 @@
   border-bottom-color: transparent;
   margin-bottom: 10px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-  transition: all var(--faq-speed) var(--faq-ease);
+
+  /* ✅ FIX: transition: all বাদ -> only needed props */
+  transition:
+    background-color var(--faq-speed) var(--faq-ease),
+    margin var(--faq-speed) var(--faq-ease),
+    border-color var(--faq-speed) var(--faq-ease),
+    box-shadow var(--faq-speed) var(--faq-ease),
+    border-radius var(--faq-speed) var(--faq-ease);
 }
 
 /* question open padding */
 .faq-item.is-open .faq-q {
   padding: 30px 18px 15px;
-  transition: all var(--faq-speed) var(--faq-ease);
   color: #fff;
+
+  /* ✅ FIX */
+  transition:
+    padding var(--faq-speed) var(--faq-ease),
+    color var(--faq-speed) var(--faq-ease);
 }
 
 /* question open text */
 .faq-item.is-open .faq-qtext {
-  /* color: #fff; */
   font-size: 25px;
-  /* line-height: 35px; */
-  /* font-weight: 500; */
-  /* font-family: var(--font-heading); */
-  /* transition: all var(--faq-speed) var(--faq-ease); */
+
+  /* ✅ FIX: same as .faq-qtext */
+  transition:
+    color var(--faq-speed) var(--faq-ease),
+    font-size var(--faq-speed) var(--faq-ease),
+    line-height var(--faq-speed) var(--faq-ease),
+    font-weight var(--faq-speed) var(--faq-ease);
 }
 
 /* icon open */
 .faq-item.is-open .faq-icon {
   color: rgba(255, 255, 255, 0.85);
+  /* ✅ icon transitions already set */
 }
 
 /* open answer grid */
 .faq-a.open {
   grid-template-rows: 1fr;
-  transition: all var(--faq-speed) var(--faq-ease);
+  /* ✅ FIX: transition: all বাদ */
+  transition: grid-template-rows var(--faq-speed) var(--faq-ease);
 }
+
 /* answer text closed */
 .faq-atext {
   padding: 0 16px 18px;
   color: rgba(0, 0, 0, 0.6);
-  /* opacity: 0; */
-  transform: translateY(-10px);
-  /* transition:
+
+  /* ✅ FIX: transition: all বাদ -> তোমার comment থাকা exact props */
+  transition:
     opacity var(--faq-speed) var(--faq-ease),
     transform var(--faq-speed) var(--faq-ease),
     padding var(--faq-speed) var(--faq-ease),
-    color var(--faq-speed) var(--faq-ease); */
-  transition: all var(--faq-speed) var(--faq-ease);
+    color var(--faq-speed) var(--faq-ease);
 }
 
 /* answer open text */
 .faq-a.open .faq-atext {
   opacity: 1;
-  transform: translateY(0px);
   color: rgba(255, 255, 255, 0.75);
   padding: 0 18px 30px;
-  transition: all var(--faq-speed) var(--faq-ease);
+
+  /* ✅ FIX: same transitions */
+  transition:
+    opacity var(--faq-speed) var(--faq-ease),
+    transform var(--faq-speed) var(--faq-ease),
+    padding var(--faq-speed) var(--faq-ease),
+    color var(--faq-speed) var(--faq-ease);
 }
 
 /* =========================
