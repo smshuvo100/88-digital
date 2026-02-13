@@ -37,8 +37,8 @@ export default function Quote() {
           return inner;
         });
 
-        // initial state
-        gsap.set(lineInners, { yPercent: 110, opacity: 0 });
+        // ✅ initial state (BOTTOM → TOP needs negative yPercent)
+        gsap.set(lineInners, { yPercent: -110, opacity: 0 });
         gsap.set(btnRef.current, { y: 14, opacity: 0 });
 
         // faster timeline
@@ -46,7 +46,7 @@ export default function Quote() {
         tl.to(lineInners, {
           yPercent: 0,
           opacity: 1,
-          ease: "none",
+          ease: "power3.out",
           stagger: 0.06,
           duration: 0.55,
         }).to(
@@ -54,7 +54,7 @@ export default function Quote() {
           {
             y: 0,
             opacity: 1,
-            ease: "none",
+            ease: "power3.out",
             duration: 0.35,
           },
           "-=0.15",
@@ -64,9 +64,9 @@ export default function Quote() {
         st = ScrollTrigger.create({
           trigger: sectionRef.current,
           start: "top 85%",
-          end: "top 15%", // ✅ short scroll distance (fast feel)
+          end: "top 25%",
           scrub: true,
-          pin: false, // ✅ IMPORTANT
+          pin: false,
           animation: tl,
           //markers: true,
         });

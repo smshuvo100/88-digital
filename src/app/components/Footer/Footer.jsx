@@ -4,18 +4,85 @@ import "./Footer.css";
 import Image from "next/image";
 import { BsArrowRight } from "react-icons/bs";
 import { FaFacebookF, FaWhatsapp, FaSnapchatGhost } from "react-icons/fa";
-import { BsArrowDown, BsArrowUp } from "react-icons/bs";
+import { BsArrowUp } from "react-icons/bs";
+import { useRef } from "react";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  return (
-    <footer className="ft-sec">
-      {/* top glow corners */}
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
 
+  useGSAP(
+    () => {
+      let splitInstance;
+      let st;
+
+      (async () => {
+        const SplitType = (await import("split-type")).default;
+
+        // ✅ split lines exactly like Quote
+        splitInstance = new SplitType(titleRef.current, {
+          types: "lines",
+          lineClass: "q-line", // ✅ reuse same class name (same CSS behavior)
+        });
+
+        const lineInners = splitInstance.lines.map((line) => {
+          const inner = document.createElement("span");
+          inner.className = "q-line-inner"; // ✅ reuse same inner class
+          inner.innerHTML = line.innerHTML;
+          line.innerHTML = "";
+          line.appendChild(inner);
+          return inner;
+        });
+
+        // ✅ initial state (BOTTOM → TOP)
+        gsap.set(lineInners, { yPercent: -110, opacity: 0 });
+
+        const tl = gsap.timeline();
+        tl.to(lineInners, {
+          yPercent: 0,
+          opacity: 1,
+          ease: "power3.out",
+          stagger: {
+            each: 0.08,
+            from: "end", // ✅ bottom line first (TOGETHER -> LET'S WORK)
+          },
+          duration: 0.85, // ✅ little slower for footer
+        });
+
+        st = ScrollTrigger.create({
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 35%",
+          scrub: true,
+          pin: false,
+          animation: tl,
+          // markers: true,
+        });
+
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+      })();
+
+      return () => {
+        splitInstance?.revert();
+        st?.kill();
+      };
+    },
+    { scope: sectionRef },
+  );
+
+  return (
+    <footer className="ft-sec" ref={sectionRef}>
       <div className="container">
-        {/* heading */}
-        <h2 className="ft-title title1">
+        {/* ✅ heading (ONLY this text animates) */}
+        <h2 className="ft-title title1" ref={titleRef}>
           LET’S WORK
           <br />
           TOGETHER

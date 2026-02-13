@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { BsArrowRight } from "react-icons/bs";
 
+import { motion } from "framer-motion";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -21,68 +23,135 @@ export default function OurServices() {
   // ✅ loop smooth (RecentWork style: same items repeat)
   const loopItems = [...items, ...items];
 
+  // ✅ Stagger container (item-by-item)
+  const listVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12, // ✅ one-by-one
+        delayChildren: 0.15,
+      },
+    },
+  };
+
+  // ✅ Right -> Left (comes from right, settles to place)
+  const itemVariants = {
+    hidden: { x: 70, opacity: 0 }, // ✅ from right
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.85, // ✅ slower feel
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const headingVariants = {
+    hidden: { y: 22, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const ctaVariants = {
+    hidden: { y: 18, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 },
+    },
+  };
+
   return (
     <section className="os-sec">
       <div className="container">
-        <h2 className="uppercase center">OUR SERVICES</h2>
+        <motion.h2
+          className="uppercase center"
+          variants={headingVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.7 }}
+        >
+          OUR SERVICES
+        </motion.h2>
       </div>
 
       {/* ✅ EXACT like RecentWork: overflow on RIGHT only */}
       <div className="os-outside">
         <div className="container">
           <div className="os-slider">
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              slidesPerView="auto"
-              spaceBetween={20}
-              loop={true}
-              speed={650}
-              grabCursor={true}
-              centeredSlides={false}
-              watchSlidesProgress={true}
-              observer={true}
-              observeParents={true}
-              updateOnWindowResize={true}
-              autoplay={{
-                delay: 5000, // ✅ same as your RecentWork
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-              }}
-              pagination={{ clickable: true }}
-              className="os-swiper"
+            {/* ✅ Wrap swiper in motion container to apply stagger */}
+            <motion.div
+              variants={listVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
             >
-              {loopItems.map((it, idx) => (
-                <SwiperSlide key={`${it.id}-${idx}`} className="os-slide">
-                  <article className="os-card">
-                    <h3 className="os-title">{it.title}</h3>
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                slidesPerView="auto"
+                spaceBetween={20}
+                loop={true}
+                speed={650}
+                grabCursor={true}
+                centeredSlides={false}
+                watchSlidesProgress={true}
+                observer={true}
+                observeParents={true}
+                updateOnWindowResize={true}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: false,
+                }}
+                pagination={{ clickable: true }}
+                className="os-swiper"
+              >
+                {loopItems.map((it, idx) => (
+                  <SwiperSlide key={`${it.id}-${idx}`} className="os-slide">
+                    {/* ✅ Item-by-item Right -> Left */}
+                    <motion.article className="os-card" variants={itemVariants}>
+                      <h3 className="os-title">{it.title}</h3>
 
-                    <div className="btn btn2">
-                      <a href="#">
-                        <span className="gradient-text">VIEW FULL PROJECT</span>
-                        <BsArrowRight />
-                      </a>
-                    </div>
+                      <div className="btn btn2">
+                        <a href="#">
+                          <span className="gradient-text">
+                            VIEW FULL PROJECT
+                          </span>
+                          <BsArrowRight />
+                        </a>
+                      </div>
 
-                    {/* light watermark behind text */}
-                    <div className="os-water" aria-hidden="true">
-                      {it.title}
-                    </div>
-                  </article>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                      {/* light watermark behind text */}
+                      <div className="os-water" aria-hidden="true">
+                        {it.title}
+                      </div>
+                    </motion.article>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </motion.div>
           </div>
         </div>
       </div>
 
       <div className="container">
         <div className="os-cta">
-          <div className="btn">
+          <motion.div
+            className="btn"
+            variants={ctaVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.6 }}
+          >
             <a href="#">
               <span>VIEW ALL SERVICES</span>
               <BsArrowRight />
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

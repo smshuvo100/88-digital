@@ -178,3 +178,16 @@ footer.ft-sec .btn {
   font-size: 38px;
   color: #333333;
 }
+
+/* Footer heading: force solid text (override Quote gradient split styles) */
+.ft-title .q-line-inner {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+
+  -webkit-text-fill-color: #0e0e0e !important; /* ✅ this is the key */
+  color: #0e0e0e !important;
+
+  display: inline-block;
+  will-change: transform, opacity;
+}

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./FAQ.css";
+import { motion, useInView } from "framer-motion";
 
 const FAQS = [
   {
@@ -34,41 +35,91 @@ export default function FAQ() {
     if (openIndex !== idx) setOpenIndex(idx);
   };
 
-  return (
-    <section className="faq-sec">
-      <div className="container">
-        <h2 className="faq-title uppercase center">
-          FREQUENTLY ASKED QUESTIONS
-        </h2>
+  // ✅ trigger animation when section is visible (so you don't miss it)
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { amount: 0.55, once: true });
 
-        <div className="faq-wrap">
-          {FAQS.map((item, idx) => {
+  // ✅ container stagger
+  const list = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.14,
+        delayChildren: 0.18,
+      },
+    },
+  };
+
+  // ✅ each item comes from bottom (slow + deeper)
+  const item = {
+    hidden: { y: 90, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1.25, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  // ✅ title reveal
+  const title = {
+    hidden: { y: 34, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1.05, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  return (
+    <section className="faq-sec" ref={sectionRef}>
+      <div className="container">
+        <motion.h2
+          className="faq-title uppercase center"
+          variants={title}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+        >
+          FREQUENTLY ASKED QUESTIONS
+        </motion.h2>
+
+        {/* ✅ list reveal (CSS accordion stays as-is) */}
+        <motion.div
+          className="faq-wrap"
+          variants={list}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+        >
+          {FAQS.map((itemData, idx) => {
             const isOpen = idx === openIndex;
 
             return (
-              <div key={idx} className={`faq-item ${isOpen ? "is-open" : ""}`}>
+              <motion.div
+                key={idx}
+                className={`faq-item ${isOpen ? "is-open" : ""}`}
+                variants={item}
+              >
                 <button
                   type="button"
                   className="faq-q"
                   onClick={() => toggle(idx)}
                   aria-expanded={isOpen}
                 >
-                  <span className="faq-qtext">{item.q}</span>
+                  <span className="faq-qtext">{itemData.q}</span>
                   <span className="faq-icon" aria-hidden="true">
                     {isOpen ? "–" : "+"}
                   </span>
                 </button>
 
-                {/* ✅ Smooth slide like your Tailwind version */}
+                {/* ✅ Keep your CSS slide system exactly same */}
                 <div className={`faq-a ${isOpen ? "open" : ""}`}>
                   <div className="faq-a-inner">
-                    <p className="faq-atext text5">{item.a}</p>
+                    <p className="faq-atext text5">{itemData.a}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

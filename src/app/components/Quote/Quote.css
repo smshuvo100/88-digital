@@ -7,13 +7,6 @@
   margin-top: 18px;
 }
 
-/* .quote-text {
-  display: inline-block;
-  font-size: clamp(38px, 5vw, 82px); 
-  font-weight: 600;
-  line-height: 1.08;
-} */
-
 /* lines */
 .q-line {
   display: block;
@@ -33,7 +26,7 @@
 
 section.quote-sec p {
   font-weight: 700;
-  font-size: 76px;
+  font-size: 70px;
   line-height: 90px;
   text-transform: uppercase;
 }
