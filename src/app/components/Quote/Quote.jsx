@@ -60,14 +60,15 @@ export default function Quote() {
           "-=0.15",
         );
 
-        // ✅ No pin → no extra whitespace
+        // ✅ No pin → no extra whitespaceß
         st = ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 85%",
+          start: "top 50%",
           end: "top 25%",
           scrub: true,
           pin: false,
           animation: tl,
+
           //markers: true,
         });
 

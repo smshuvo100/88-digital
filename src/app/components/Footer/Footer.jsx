@@ -59,12 +59,12 @@ export default function Footer() {
 
         st = ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 80%",
-          end: "top 35%",
+          start: "top 50%",
+          end: "top 25%",
           scrub: true,
           pin: false,
           animation: tl,
-          // markers: true,
+          //markers: true,
         });
 
         requestAnimationFrame(() => ScrollTrigger.refresh());
