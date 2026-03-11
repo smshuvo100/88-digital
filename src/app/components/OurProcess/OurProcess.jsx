@@ -175,7 +175,7 @@ export default function OurProcess() {
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true,
+              pauseOnMouseEnter: false,
             }}
             className="op-swiper"
           >
