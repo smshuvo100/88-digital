@@ -149,6 +149,11 @@ export default function RecentWork() {
                 updateOnWindowResize={true}
                 pagination={{ clickable: true }}
                 className="rw-swiper"
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: false,
+                }}
               >
                 {items.map((it) => (
                   <SwiperSlide key={it.id} className="rw-slide">

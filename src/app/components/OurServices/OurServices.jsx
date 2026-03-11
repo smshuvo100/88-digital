@@ -103,7 +103,7 @@ export default function OurServices() {
                 observeParents={true}
                 updateOnWindowResize={true}
                 autoplay={{
-                  delay: 5000,
+                  delay: 2000,
                   disableOnInteraction: false,
                   pauseOnMouseEnter: false,
                 }}

@@ -172,11 +172,11 @@ export default function OurProcess() {
             fadeEffect={{ crossFade: true }}
             speed={1000}
             onSlideChange={(sw) => setActiveIdx(sw.realIndex)} // ✅ get active slide
-            // autoplay={{
-            //   delay: 2500,
-            //   disableOnInteraction: false,
-            //   pauseOnMouseEnter: true,
-            // }}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
             className="op-swiper"
           >
             {processSlides.map((item, idx) => (

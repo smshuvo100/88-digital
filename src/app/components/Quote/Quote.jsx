@@ -38,8 +38,8 @@ export default function Quote() {
         });
 
         // ✅ initial state (BOTTOM → TOP needs negative yPercent)
-        gsap.set(lineInners, { yPercent: -110, opacity: 0 });
-        gsap.set(btnRef.current, { y: 14, opacity: 0 });
+        gsap.set(lineInners, { yPercent: -110, opacity: 1 });
+        gsap.set(btnRef.current, { y: 14, opacity: 1 });
 
         // faster timeline
         const tl = gsap.timeline();
@@ -63,7 +63,7 @@ export default function Quote() {
         // ✅ No pin → no extra whitespaceß
         st = ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 50%",
+          start: "top 90%",
           end: "top 25%",
           scrub: true,
           pin: false,
