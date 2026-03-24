@@ -26,7 +26,7 @@ export default function Home() {
 
       <Brands />
 
-      <Quote />
+      {/* <Quote /> */}
 
       <Quote2 />
 

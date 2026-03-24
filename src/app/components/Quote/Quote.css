@@ -1,5 +1,5 @@
-.quote-sec {
-  padding: 24px 0; /* ✅ কম padding = কম ফাঁকা */
+/* .quote-sec {
+  padding: 24px 0; 
   text-align: center;
 }
 
@@ -7,13 +7,11 @@
   margin-top: 18px;
 }
 
-/* lines */
 .q-line {
   display: block;
   overflow: hidden;
 }
 
-/* ✅ apply same gradient so text never disappears */
 .q-line-inner {
   display: inline-block;
   will-change: transform, opacity;
@@ -29,4 +27,4 @@ section.quote-sec p {
   font-size: 70px;
   line-height: 90px;
   text-transform: uppercase;
-}
+} */

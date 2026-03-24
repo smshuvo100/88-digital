@@ -3,27 +3,45 @@
   text-align: center;
 }
 
-.quote-sec .btn {
-  margin-top: 18px;
+.quote-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-section.quote-sec p {
+.quote-text {
   font-weight: 700;
-  font-size: 70px;
-  line-height: 90px;
+  font-size: 53px;
+  line-height: 63px;
   text-transform: uppercase;
 }
 
-/* optional responsive */
+.quote-text span {
+  display: block;
+}
+
+.btn.smj {
+  margin-top: 22px;
+}
+
+.quote-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+/* tablet */
 @media (max-width: 992px) {
-  section.quote-sec p {
+  .quote-text {
     font-size: 52px;
     line-height: 1.2;
   }
 }
 
+/* mobile */
 @media (max-width: 576px) {
-  section.quote-sec p {
+  .quote-text {
     font-size: 36px;
     line-height: 1.2;
   }
