@@ -150,7 +150,7 @@ export default function RecentWork() {
                 pagination={{ clickable: true }}
                 className="rw-swiper"
                 autoplay={{
-                  delay: 2000,
+                  delay: 3000,
                   disableOnInteraction: false,
                   pauseOnMouseEnter: false,
                 }}

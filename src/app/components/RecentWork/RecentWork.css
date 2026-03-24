@@ -832,7 +832,7 @@ section.rw-sec .swiper-wrapper {
   pointer-events: none;
   z-index: 1;
 
-  animation: rwGlowOrbit 1.4s linear infinite;
+  animation: rwGlowOrbit 2.4s linear infinite;
 }
 
 /* ✅ ORBIT (corners included) */
