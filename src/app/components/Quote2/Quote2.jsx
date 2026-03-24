@@ -40,8 +40,10 @@ export default function Quote2() {
           className="quote-wrap"
         >
           <motion.p className="quote-text gradient-text" variants={textAnim}>
-            <span>We help aspiring entrepreneurs</span>
-            <span>turn their ideas into successful business</span>
+            <span>
+              We help aspiring entrepreneurs turn their ideas into successful
+              business
+            </span>
           </motion.p>
 
           <motion.div className="btn smj" variants={btnAnim}>
