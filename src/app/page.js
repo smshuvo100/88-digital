@@ -9,6 +9,7 @@ import Header from "./components/Header/Header";
 import HomeHero from "./components/HomeHero/HomeHero";
 import Brands from "./components/Brands/Brands";
 import Quote from "./components/Quote/Quote";
+import Quote2 from "./components/Quote2/Quote2";
 import RecentWork from "./components/RecentWork/RecentWork";
 import SuccessStories from "./components/SuccessStories/SuccessStories";
 import OurServices from "./components/OurServices/OurServices";
@@ -26,6 +27,8 @@ export default function Home() {
       <Brands />
 
       <Quote />
+
+      <Quote2 />
 
       <RecentWork />
 

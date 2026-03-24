@@ -1,0 +1,30 @@
+.quote-sec {
+  padding: 24px 0;
+  text-align: center;
+}
+
+.quote-sec .btn {
+  margin-top: 18px;
+}
+
+section.quote-sec p {
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 90px;
+  text-transform: uppercase;
+}
+
+/* optional responsive */
+@media (max-width: 992px) {
+  section.quote-sec p {
+    font-size: 52px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 576px) {
+  section.quote-sec p {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+}
