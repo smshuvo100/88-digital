@@ -81,7 +81,7 @@
   opacity: 0;
 }
 
-.quote-btn {
+/* .quote-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -104,7 +104,7 @@
   gap: 16px;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .arrow-icon {
   transition: transform 0.3s ease;
