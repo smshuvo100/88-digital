@@ -1,48 +1,179 @@
 .quote-sec {
-  padding: 24px 0;
-  text-align: center;
+  padding: 80px 0;
+  /* background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); */
+  position: relative;
+  overflow: hidden;
 }
+
+/* Optional: Add animated background element */
+.quote-sec::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+} */
 
 .quote-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 60vh;
 }
 
 .quote-text {
-  font-weight: 700;
-  font-size: 108px;
-  line-height: 118px;
+  font-weight: 800;
+  font-size: clamp(2rem, 8vw, 7rem);
+  line-height: 1;
   text-transform: uppercase;
+  text-align: center;
+  /* margin-bottom: 2rem; */
+  position: relative;
 }
 
-.quote-text span {
-  display: block;
+.line-mask {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.line-item {
+  display: inline-block;
+  background: var(--gradient-primary);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+/* For mobile, allow text wrapping */
+@media (max-width: 768px) {
+  .line-item {
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  .quote-text {
+    line-height: 1.2;
+  }
 }
 
 .btn.smj {
-  margin-top: 22px;
+  margin-top: 48px;
+  opacity: 0;
 }
 
 .quote-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  backdrop-filter: blur(10px);
+  letter-spacing: 0.5px;
 }
 
-/* tablet */
+.quote-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  gap: 16px;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.quote-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Optional: Add a subtle glow effect on the text */
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(160, 160, 255, 0);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(160, 160, 255, 0.3);
+  }
+}
+
+.line-item {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+/* Tablet */
 @media (max-width: 992px) {
-  .quote-text {
-    font-size: 52px;
-    line-height: 1.2;
+  .quote-sec {
+    padding: 60px 0;
+  }
+
+  .quote-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
   }
 }
 
-/* mobile */
+/* Mobile */
 @media (max-width: 576px) {
-  .quote-text {
-    font-size: 36px;
-    line-height: 1.2;
+  .quote-sec {
+    padding: 40px 0;
   }
+
+  .quote-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+
+  .btn.smj {
+    margin-top: 32px;
+  }
+}
+
+/* Add smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add a fade-in animation for the whole section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quote-sec {
+  animation: fadeInUp 0.8s ease-out;
 }
