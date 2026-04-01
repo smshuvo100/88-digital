@@ -1,0 +1,39 @@
+/* 
+=====================================
+    sub-hero-sec 
+=====================================
+*/
+section.sub-hero-sec {
+  overflow: hidden;
+  position: relative;
+}
+
+section.sub-hero-sec .wrap {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+section.sub-hero-sec .wrap .sub-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+section.sub-hero-sec .wrap .sub-title p {
+  color: var(--gray-200);
+}
+
+section.sub-hero-sec h2.title2 {
+  text-align: center;
+  line-height: 72px;
+}
+
+section.sub-hero-sec .btn {
+  padding-top: 15px;
+}

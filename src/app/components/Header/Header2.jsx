@@ -9,6 +9,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import "./Header.css";
+import "./Header2.css";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -76,7 +77,7 @@ export default function Header() {
   };
 
   return (
-    <header className="nav-section">
+    <header className="nav-section sm-black-header">
       <div className="container">
         <motion.nav
           className="nav"
@@ -86,7 +87,7 @@ export default function Header() {
         >
           <motion.a className="brand" href="/" variants={linkVariants}>
             <Image
-              src="/assets/logo.png"
+              src="/assets/logo-black.png"
               alt="88 Digital"
               width={140}
               height={34}
