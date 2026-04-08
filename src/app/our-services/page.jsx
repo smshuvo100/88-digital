@@ -21,6 +21,8 @@ export default function page() {
         btnLink="/contact"
       />
 
+      {/* PLZ add section here */}
+
       <FAQ />
       <Footer />
     </>

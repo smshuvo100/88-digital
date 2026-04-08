@@ -1,3 +1,4 @@
+// src/data/blogs.js
 export const blogsData = {
   blogs: [
     {

@@ -1,4 +1,3 @@
-// src/app/components/blog/CategoryTabs.jsx
 "use client";
 
 import { motion, useInView } from "framer-motion";
@@ -41,8 +40,9 @@ export default function CategoryTabs({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
-      {categories.map((category, index) => (
+      {categories.map((category) => (
         <motion.button
+          type="button"
           key={category}
           variants={buttonVariants}
           onClick={() => onCategoryChange(category)}

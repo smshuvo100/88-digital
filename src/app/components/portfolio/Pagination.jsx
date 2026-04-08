@@ -1,4 +1,3 @@
-// src/app/components/blog/Pagination.jsx
 "use client";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -64,6 +63,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       animate={isInView ? "visible" : "hidden"}
     >
       <motion.button
+        type="button"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => onPageChange(currentPage - 1)}
@@ -75,6 +75,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
 
       {getPageNumbers().map((page, index) => (
         <motion.button
+          type="button"
           key={index}
           whileHover={typeof page === "number" ? { scale: 1.05, y: -2 } : {}}
           whileTap={typeof page === "number" ? { scale: 0.95 } : {}}
@@ -89,6 +90,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       ))}
 
       <motion.button
+        type="button"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => onPageChange(currentPage + 1)}

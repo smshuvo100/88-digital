@@ -1,3 +1,4 @@
+// src/app/blog/[slug]/page.js
 "use client";
 
 import { useParams } from "next/navigation";

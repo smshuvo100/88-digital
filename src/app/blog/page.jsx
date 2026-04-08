@@ -1,3 +1,4 @@
+// src/app/blog/page.jsx
 "use client";
 
 import { useState, useMemo, useRef } from "react";

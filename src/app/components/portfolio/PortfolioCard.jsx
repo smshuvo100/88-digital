@@ -1,13 +1,12 @@
-// src/app/components/blog/BlogCard.jsx
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FaCalendar, FaClock } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
-export default function BlogCard({ blog }) {
+
+export default function PortfolioCard({ portfolio }) {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.3 });
 
@@ -29,37 +28,40 @@ export default function BlogCard({ blog }) {
       animate={isInView ? "visible" : "hidden"}
       whileHover={{ y: -8, transition: { duration: 0.2 } }}
     >
-      <Link href={`/blog/${blog.slug}`} className="blog-card">
+      <Link href={`/portfolio/${portfolio.slug}`} className="portfolio-card">
         <div className="card-wrapper">
           <div className="card-image">
             <Image
-              src={blog.featureImage}
-              alt={blog.title}
+              src={portfolio.featureImage}
+              alt={portfolio.title}
               width={800}
-              height={400}
+              height={500}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
               loading="lazy"
             />
           </div>
-          <div className="card-content">
-            <span className="card-category">{blog.category}</span>
-            <h2 className="card-title">{blog.title}</h2>
-            <div className="card-meta">
-              <div className="mata-wrap">
-                <span>
-                  <FaCalendar className="meta-icon" size={12} />
-                  {new Date(blog.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </span>
 
-                {/* <span>
-                  <FaClock className="meta-icon" size={12} />
-                  {blog.time}
-                </span> */}
+          <div className="card-content">
+            <div className="portfolio-title-row">
+              <h2 className="card-title">{portfolio.title}</h2>
+              <span className="portfolio-year">{portfolio.year}</span>
+            </div>
+
+            <div className="portfolio-tags">
+              {portfolio.tags?.map((tag, index) => (
+                <span key={index} className="card-category">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="card-meta portfolio-card-meta">
+              <div className="portfolio-sales">
+                <span className="sales-label">Sales Revenue</span>
+                {/* ডাটাবেজ থেকে আসা salesRevenue ব্যবহার করা হয়েছে */}
+                <h3>{portfolio.salesRevenue}%</h3>
               </div>
+
               <div className="btn-wrap">
                 <span className="read-more">
                   <BsArrowRight />
