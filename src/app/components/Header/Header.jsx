@@ -124,9 +124,9 @@ export default function Header() {
               variants={linkVariants}
             >
               <a
-                href="/our-services"
+                href="/services"
                 className={`nav-link has-sub ${
-                  pathname.startsWith("/our-services") ? "active" : ""
+                  pathname.startsWith("/services") ? "active" : ""
                 }`}
               >
                 Services <IoChevronDownOutline />
@@ -166,6 +166,7 @@ export default function Header() {
             </motion.li>
 
             <motion.li variants={linkVariants}>
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
               <a className={pathname === "/blog" ? "active" : ""} href="/blog">
                 Blogs
               </a>

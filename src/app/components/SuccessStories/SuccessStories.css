@@ -53,7 +53,7 @@
    ✅ gap fix (slide width tuned to scaled card)
 ========================= */
 
-.ss-slide {
+.ss-sec .ss-slide {
   width: 354px; /* ✅ gap ছোট: 490 * 0.86 ≈ 421 */
   display: flex;
   justify-content: center;
@@ -64,7 +64,7 @@
 }
 
 /* card will scale down for non-featured */
-.ss-card {
+.ss-sec .ss-card {
   width: 100%;
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -86,14 +86,9 @@
   will-change: transform;
 }
 
-/* dim the others */
-.ss-swiper .swiper-slide-active,
-.ss-swiper .swiper-slide-next + .swiper-slide {
-  /* opacity: 0.55; */
-}
-
 /* ✅ FEATURED (NEXT fully visible) becomes full scale */
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide {
   opacity: 1;
   z-index: 6;
@@ -102,7 +97,8 @@
   width: 472px;
 }
 
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
   .ss-card {
   background: rgba(255, 255, 255, 0.72);
@@ -114,7 +110,7 @@
    AVATAR + TEXT
 ========================= */
 
-.ss-avatar {
+.ss-sec .ss-avatar {
   width: 56px;
   height: 56px;
   border-radius: 999px;
@@ -124,20 +120,20 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-.ss-avatar img {
+.ss-sec .ss-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.ss-name {
+.ss-sec .ss-name {
   text-align: center;
   color: var(--black-200);
   font-weight: 700;
   font-size: 18px;
 }
 
-.ss-role {
+.ss-sec .ss-role {
   text-align: center;
   margin-top: 4px;
   color: rgba(0, 0, 0, 0.45);
@@ -145,7 +141,7 @@
 }
 
 /* stat */
-.ss-stat {
+.ss-sec .ss-stat {
   margin-top: 20px;
   display: grid;
   justify-items: center;
@@ -153,7 +149,7 @@
   position: relative;
 }
 
-.ss-percent {
+.ss-sec .ss-percent {
   font-family: var(--font-heading);
   font-weight: 800;
   line-height: 1;
@@ -164,16 +160,16 @@
   -webkit-text-fill-color: transparent;
 }
 
-.ss-percent::first-letter {
+.ss-sec .ss-percent::first-letter {
   font-size: 86px;
 }
 
-.ss-percent-sign {
+.ss-sec .ss-percent-sign {
   font-size: 42px;
   font-weight: 800;
 }
 
-.ss-stat .ss-label {
+.ss-sec .ss-stat .ss-label {
   color: rgba(255, 70, 12, 0.55);
   font-size: 14px;
   position: absolute;
@@ -182,7 +178,7 @@
 }
 
 /* quote */
-.ss-quote {
+.ss-sec .ss-quote {
   margin-top: 18px;
   text-align: center;
   color: rgba(0, 0, 0, 0.62);
@@ -197,12 +193,12 @@
   position: relative;
 }
 
-.ss-bold {
+.ss-sec .ss-bold {
   font-weight: 700;
   color: rgba(0, 0, 0, 0.74);
 }
 
-.ss-strong {
+.ss-sec .ss-strong {
   font-weight: 800;
   color: rgba(0, 0, 0, 0.72);
 }
@@ -212,33 +208,38 @@
    (এইগুলো jump করতে পারে, কিন্তু overall motion smooth হবে)
 ========================= */
 
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
   h5.ss-name {
   font-size: 22px;
   line-height: 34px;
 }
 
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
   .ss-avatar {
   width: 70px;
   height: 70px;
 }
 
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
   .ss-percent::first-letter {
   font-size: 220px;
 }
 
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
   .ss-percent {
   font-size: 130px;
 }
 
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
   .ss-stat
   .ss-label {
@@ -247,7 +248,8 @@
   font-size: 16px;
 }
 
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
   .ss-quote {
   font-size: 20px;
@@ -258,11 +260,11 @@
    DOTS
 ========================= */
 
-.ss-swiper .swiper-pagination-bullets {
+.ss-sec .ss-swiper .swiper-pagination-bullets {
   bottom: 10px !important;
 }
 
-.ss-swiper .swiper-pagination-bullet {
+.ss-sec .ss-swiper .swiper-pagination-bullet {
   width: 8px;
   height: 4px;
   border-radius: 4px;
@@ -270,7 +272,7 @@
   background: #000;
 }
 
-.ss-swiper .swiper-pagination-bullet-active {
+.ss-sec .ss-swiper .swiper-pagination-bullet-active {
   width: 34px;
   opacity: 1;
 }
@@ -280,34 +282,34 @@
 ========================= */
 
 @media (max-width: 992px) {
-  .ss-slide {
+  .ss-sec .ss-slide {
     width: 370px; /* ✅ gap fix: 420 * 0.88 ≈ 370 */
   }
 
-  .ss-card {
+  .ss-sec .ss-card {
     transform: scale(0.88);
   }
 
-  .ss-percent {
+  .ss-sec .ss-percent {
     font-size: 74px;
   }
 }
 
 @media (max-width: 576px) {
-  .ss-swiper {
+  .ss-sec .ss-swiper {
     padding-bottom: 90px !important;
   }
 
-  .ss-slide {
+  .ss-sec .ss-slide {
     width: 88%;
     opacity: 1;
   }
 
-  .ss-card {
+  .ss-sec .ss-card {
     transform: scale(1); /* mobile এ সব full */
   }
 
-  .ss-swiper .swiper-pagination-bullets {
+  .ss-sec .ss-swiper .swiper-pagination-bullets {
     bottom: 18px !important;
   }
 }
@@ -317,7 +319,8 @@
 ========================================== */
 
 /* keep card above glow */
-.ss-swiper
+.ss-sec
+  .ss-swiper
   .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next.ss-slide
   .ss-card {
   position: relative;

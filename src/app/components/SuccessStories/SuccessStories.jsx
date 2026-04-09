@@ -90,11 +90,11 @@ export default function SuccessStories() {
           observer={true}
           observeParents={true}
           updateOnWindowResize={true}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
+          // autoplay={{
+          //   delay: 2000,
+          //   disableOnInteraction: false,
+          //   pauseOnMouseEnter: true,
+          // }}
           pagination={{ clickable: true }}
           className="ss-swiper"
         >

@@ -1,0 +1,358 @@
+.custom-services-section {
+  position: relative;
+  /* background-color: #fcfcfc; */
+  overflow: hidden;
+  /* padding: 100px 0; */
+  /* font-family: "Inter", sans-serif; */
+  padding-bottom: 100px;
+}
+
+.custom-services-section::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 192, 203, 0.25) 0%,
+    transparent 60%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.custom-services-container {
+  display: flex;
+  align-items: flex-start;
+  /* max-width: 1300px; */
+  /* margin: 0 auto; */
+  /* padding: 0 30px; */
+  /* position: relative; */
+  /* z-index: 1; */
+  gap: 70px;
+}
+
+.services-nav-list {
+  flex: 0 0 44%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.service-nav-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #333333;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: var(--font-body);
+}
+
+.nav-num {
+  font-size: 28px;
+  font-weight: 500;
+  margin-right: 20px;
+  transition: all 0.35s ease;
+}
+
+.nav-title {
+  font-size: 22px;
+  font-weight: 400;
+  transition: all 0.35s ease;
+}
+
+.service-nav-item.active {
+  color: #222;
+  font-family: var(--font-heading);
+}
+
+.service-nav-item.active .nav-num {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 0.8;
+  width: auto;
+}
+
+.service-nav-item.active .nav-title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.services-content-area {
+  flex: 1;
+  min-width: 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.slide-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-full-image-wrap {
+  width: 100%;
+  margin-bottom: 34px;
+}
+
+.service-full-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.service-full-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.service-description {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+}
+
+.gradient-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-icon {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+@media (max-width: 1024px) {
+  .custom-services-container {
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .services-nav-list {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .services-content-area {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .service-nav-item.active .nav-num {
+    font-size: 60px;
+  }
+
+  .service-nav-item.active .nav-title {
+    font-size: 28px;
+  }
+
+  .service-full-image img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-services-section {
+    padding: 70px 0;
+  }
+
+  .custom-services-container {
+    padding: 0 20px;
+  }
+
+  .nav-num {
+    font-size: 22px;
+    width: 40px;
+    margin-right: 14px;
+  }
+
+  .nav-title {
+    font-size: 18px;
+  }
+
+  .service-nav-item.active .nav-num {
+    font-size: 42px;
+  }
+
+  .service-nav-item.active .nav-title {
+    font-size: 24px;
+  }
+
+  .service-full-image img {
+    height: 260px;
+  }
+
+  .service-description {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .gradient-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+.slide-content-wrapper .btn {
+  background: transparent;
+}
+
+/* 
+=========================
+sub header
+=========================
+*/
+
+.service-hero-image {
+  height: 800px;
+  /* display: flex; */
+  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.service-hero-content h1 {
+  color: #fff;
+}
+
+/* 
+=========================
+brand logo
+=========================
+*/
+
+section.brand-logo-sec .brand-logos-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 30px;
+}
+
+section.brand-logo-sec .brand-logos-wrap .box {
+  background: #ffffff;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 1px 9px #0000000d;
+}
+
+section.brand-logo-sec .brand-logos-wrap .box img {
+  height: auto;
+  width: 85px;
+  /* object-fit: cover; */
+}
+
+section.brand-logo-sec {
+  padding-top: 100px;
+}
+
+/* 
+=========================
+service cta
+=========================
+*/
+
+section.service-cta-sec {
+  background: linear-gradient(90deg, #f2dddd 0%, #e7ddf5 100%);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+section.service-cta-sec .title-wrap {
+  max-width: 599px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  margin-bottom: 30px;
+}
+
+section.service-cta-sec .btn-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+}
+
+section.service-cta-sec .btn-group a {
+  width: 400px;
+  /* text-align: center; */
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  /* background: tan; */
+}
+
+section.service-cta-sec .btn-group .btn.border {
+  border: 1px solid #333333;
+  background: transparent;
+}
+
+section.service-cta-sec .btn-group .btn.border a {
+  background: transparent;
+  color: #333;
+}
+
+/* 
+=========================
+why choose  
+=========================
+*/
+
+section.why-choose-sec {
+  padding-top: 50px;
+}
+section.why-choose-sec .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 35px;
+}
+section.why-choose-sec .wrap .box {
+  background: linear-gradient(90deg, #f2dddd 0%, #e7ddf5 100%);
+  border-radius: 16px;
+  position: relative;
+  height: 269px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+section.why-choose-sec .wrap .box .text-wrap {
+  padding: 0 40px;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+section.why-choose-sec .wrap .box img {
+  position: absolute;
+  right: -23px;
+  bottom: -17px;
+}
