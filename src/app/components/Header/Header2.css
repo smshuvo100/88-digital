@@ -16,3 +16,6 @@ header.nav-section.sm-black-header .dropdown {
 header.nav-section.sm-black-header nav.nav ul.nav-links a:hover {
   background: var(--white);
 }
+header.nav-section.sm-black-header button.mobile-menu-toggle {
+  color: #242324;
+}

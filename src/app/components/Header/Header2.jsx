@@ -1,18 +1,23 @@
-// src/app/components/Header/Header.jsx
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
-import { IoChevronDownOutline } from "react-icons/io5";
-import Link from "next/link";
+import {
+  IoChevronDownOutline,
+  IoMenuOutline,
+  IoCloseOutline,
+} from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import "./Header.css";
 import "./Header2.css";
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // desktop dropdown
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
   const closeTimer = useRef(null);
   const pathname = usePathname();
 
@@ -25,7 +30,18 @@ export default function Header() {
     closeTimer.current = setTimeout(() => setOpen(false), 160);
   };
 
-  // Animations (no design change, only transform/opacity)
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setMobileServicesOpen(false);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const navVariants = {
     hidden: { y: -16, opacity: 0 },
     show: {
@@ -76,6 +92,26 @@ export default function Header() {
     },
   };
 
+  const mobileMenuMotion = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.2 } },
+    exit: { opacity: 0, transition: { duration: 0.18 } },
+  };
+
+  const mobilePanelMotion = {
+    initial: { x: "100%", opacity: 0.8 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+    },
+    exit: {
+      x: "100%",
+      opacity: 0.9,
+      transition: { duration: 0.28, ease: [0.4, 0, 0.2, 1] },
+    },
+  };
+
   return (
     <header className="nav-section sm-black-header">
       <div className="container">
@@ -117,7 +153,6 @@ export default function Header() {
               </a>
             </motion.li>
 
-            {/* Services dropdown (hover logic same, only dropdown open/close animated) */}
             <motion.li
               className="has-dropdown"
               onMouseEnter={openMenu}
@@ -137,7 +172,7 @@ export default function Header() {
                 {open && (
                   <motion.div
                     {...dropdownMotion}
-                    className={`dropdown show`}
+                    className="dropdown show"
                     onMouseEnter={openMenu}
                     onMouseLeave={closeMenu}
                   >
@@ -184,7 +219,7 @@ export default function Header() {
           </motion.ul>
 
           <motion.div
-            className="btn"
+            className="btn desktop-cta"
             variants={ctaVariants}
             initial="hidden"
             animate="show"
@@ -194,8 +229,188 @@ export default function Header() {
               <BsArrowRight />
             </a>
           </motion.div>
+
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <IoMenuOutline />
+          </button>
         </motion.nav>
       </div>
+
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div className="mobile-menu-overlay" {...mobileMenuMotion}>
+            <motion.div className="mobile-menu-wrap" {...mobilePanelMotion}>
+              <div className="mobile-menu-box">
+                <div className="mobile-menu-top">
+                  {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                  <a
+                    className="mobile-brand"
+                    href="/"
+                    onClick={closeMobileMenu}
+                  >
+                    <Image
+                      src="/assets/logo.png"
+                      alt="88 Digital"
+                      width={150}
+                      height={36}
+                      priority
+                    />
+                  </a>
+
+                  <button
+                    className="mobile-close-btn"
+                    onClick={closeMobileMenu}
+                    aria-label="Close menu"
+                  >
+                    <IoCloseOutline />
+                  </button>
+                </div>
+
+                <nav className="mobile-nav-links">
+                  {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                  <a
+                    href="/"
+                    className={pathname === "/" ? "active" : ""}
+                    onClick={closeMobileMenu}
+                  >
+                    Home
+                  </a>
+
+                  <a
+                    href="/about-us"
+                    className={pathname === "/about-us" ? "active" : ""}
+                    onClick={closeMobileMenu}
+                  >
+                    About us
+                  </a>
+
+                  <div className="mobile-services-block">
+                    <div className="mobile-services-header">
+                      <a
+                        href="/services"
+                        className={`mobile-services-link ${
+                          pathname.startsWith("/services") ? "active" : ""
+                        }`}
+                        onClick={closeMobileMenu}
+                      >
+                        Services
+                      </a>
+
+                      {/* ✅ Icon click = toggle */}
+                      <button
+                        className={`mobile-services-toggle ${
+                          mobileServicesOpen ? "open" : ""
+                        }`}
+                        onClick={() => setMobileServicesOpen((prev) => !prev)}
+                      >
+                        <IoChevronDownOutline />
+                      </button>
+                    </div>
+
+                    <AnimatePresence initial={false}>
+                      {mobileServicesOpen && (
+                        <motion.div
+                          className="mobile-submenu"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{
+                            height: "auto",
+                            opacity: 1,
+                            transition: {
+                              height: { duration: 0.28 },
+                              opacity: { duration: 0.2, delay: 0.05 },
+                            },
+                          }}
+                          exit={{
+                            height: 0,
+                            opacity: 0,
+                            transition: {
+                              height: { duration: 0.22 },
+                              opacity: { duration: 0.14 },
+                            },
+                          }}
+                        >
+                          <div className="mobile-submenu-inner">
+                            <a
+                              href="/services/market-research"
+                              onClick={closeMobileMenu}
+                            >
+                              Market Research
+                            </a>
+                            <a
+                              href="/services/financial-study"
+                              onClick={closeMobileMenu}
+                            >
+                              Financial Study
+                            </a>
+                            <a
+                              href="/services/web-design"
+                              onClick={closeMobileMenu}
+                            >
+                              Website Design
+                            </a>
+                            <a
+                              href="/services/mobile-design"
+                              onClick={closeMobileMenu}
+                            >
+                              Mobile Design
+                            </a>
+                            <a
+                              href="/services/software-development"
+                              onClick={closeMobileMenu}
+                            >
+                              Software Development
+                            </a>
+                            <a
+                              href="/services/marketing"
+                              onClick={closeMobileMenu}
+                            >
+                              Marketing
+                            </a>
+                            <a
+                              href="/services/business-automation"
+                              onClick={closeMobileMenu}
+                            >
+                              Business Automation
+                            </a>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  <a
+                    href="/portfolio"
+                    className={pathname === "/portfolio" ? "active" : ""}
+                    onClick={closeMobileMenu}
+                  >
+                    Portfolio
+                  </a>
+                  {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                  <a
+                    href="/blog"
+                    className={pathname === "/blog" ? "active" : ""}
+                    onClick={closeMobileMenu}
+                  >
+                    Blogs
+                  </a>
+
+                  <a
+                    href="/contact"
+                    className={pathname === "/contact" ? "active" : ""}
+                    onClick={closeMobileMenu}
+                  >
+                    Contact us
+                  </a>
+                </nav>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
