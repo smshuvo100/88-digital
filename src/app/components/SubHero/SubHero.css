@@ -37,3 +37,25 @@ section.sub-hero-sec h2.title2 {
 section.sub-hero-sec .btn {
   padding-top: 15px;
 }
+
+/*all mobile*/
+@media (max-width: 767px) {
+  section.sub-hero-sec h2.gradient-text.uppercase {
+    font-size: 26px;
+  }
+  body section.sub-hero-sec .wrap .sub-title {
+    margin-bottom: 20px;
+  }
+  section.sub-hero-sec h2.title2.uppercase {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  section.sub-hero-sec .wrap {
+    height: 700px;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}

@@ -1,6 +1,6 @@
 /* 
 =====================================
-    
+  mission-vision-sec
 =====================================
 */
 section.mission-vision-sec {
@@ -50,10 +50,58 @@ section.mission-vision-sec .flex-box .box.vision {
 section.mission-vision-sec .flex-box .box p {
   color: var(--white);
 }
+/*all mobile*/
+@media (max-width: 767px) {
+  body section.mission-vision-sec {
+    background-size: contain;
+  }
+
+  body section.mission-vision-sec .flex-box {
+    flex-direction: column;
+    height: auto;
+    padding-top: 250px;
+    padding-bottom: 60px;
+  }
+
+  body section.mission-vision-sec .flex-box .vision.box {
+    width: 100%;
+  }
+
+  body section.mission-vision-sec .flex-box .empty-coll {
+    width: 0;
+    display: none;
+  }
+
+  body section.mission-vision-sec .flex-box .mission.box {
+    width: 100%;
+  }
+
+  body section.mission-vision-sec .box .title-box h4 {
+    top: 8px !important;
+    font-size: 24px;
+  }
+
+  body section.mission-vision-sec .flex-box .box .title-box h1 {
+    opacity: 0.1;
+    font-size: 70px;
+  }
+
+  body section.mission-vision-sec .flex-box .box {
+    margin-bottom: 30px;
+  }
+
+  body section.mission-vision-sec .flex-box .box p {
+    font-size: 17px;
+    line-height: 27px;
+  }
+}
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}
 
 /* 
 ======================================
-    
+  our-values-sec
 =====================================
 */
 
@@ -82,4 +130,41 @@ section.our-values-sec .sphere {
 section.our-values-sec {
   padding-top: 100px;
   padding-bottom: 40px;
+}
+
+/*all mobile*/
+@media (max-width: 767px) {
+  section.our-values-sec h2.header {
+    text-transform: capitalize;
+  }
+
+  body section.our-values-sec .box {
+    width: 100%;
+  }
+
+  body section.our-values-sec .box h2.uppercase.center {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  body section.our-values-sec .box p.text4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  body section.our-values-sec .sphere {
+    max-width: 100%;
+    height: 280px;
+    padding: 0 15px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+  }
+
+  body section.our-values-sec .container {
+    padding: 0;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
 }
