@@ -79,7 +79,7 @@ export default function FAQ() {
           initial="hidden"
           animate={inView ? "show" : "hidden"}
         >
-          FREQUENTLY ASKED QUESTIONS
+          Frequently asked questions
         </motion.h2>
 
         {/* ✅ list reveal (CSS accordion stays as-is) */}

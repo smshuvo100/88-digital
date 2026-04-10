@@ -889,3 +889,70 @@ section.rw-sec .swiper-wrapper {
 .rw-swiper .swiper-slide-next .rw-biglabel {
   top: 30px;
 }
+
+/*all mobile*/
+@media (max-width: 767px) {
+  body section.rw-sec h2.uppercase.center {
+    text-transform: capitalize;
+    text-align: left;
+  }
+
+  body .rw-swiper .swiper-slide,
+  .rw-swiper .swiper-slide-next {
+    width: 100% !important;
+  }
+  body .rw-swiper .swiper-slide-next::before {
+    content: none;
+  }
+
+  body .rw-swiper .swiper-slide-active.rw-slide::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 220px;
+    height: 120px;
+
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+
+    background: linear-gradient(90deg, #eb6eff 0%, #ff460c 100%);
+    filter: blur(50px);
+
+    pointer-events: none;
+    z-index: 1;
+
+    animation: rwGlowOrbit 8s linear infinite;
+  }
+  body .rw-swiper .swiper-slide-active .rw-card {
+    position: relative;
+    z-index: 3;
+    background: #fff;
+  }
+
+  body .rw-swiper .swiper-slide-active {
+    position: relative;
+    z-index: 6;
+    overflow: visible;
+
+    /* ✅ ORBIT radius */
+    --rx: 160px;
+    --ry: 200px;
+  }
+  body section.rw-sec h5.rw-name {
+    font-size: 16px;
+  }
+
+  body section.rw-sec .btn.btn2 a {
+    padding-left: 0;
+  }
+
+  body section.rw-sec .rw-row {
+    align-items: center;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}

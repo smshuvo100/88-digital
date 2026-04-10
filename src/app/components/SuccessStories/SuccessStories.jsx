@@ -75,7 +75,7 @@ export default function SuccessStories() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          SUCCESS STORIES
+          Success Stories
         </motion.h2>
 
         <Swiper

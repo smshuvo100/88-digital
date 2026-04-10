@@ -326,3 +326,30 @@
   position: relative;
   z-index: 3;
 }
+
+/*all mobile*/
+@media (max-width: 767px) {
+  body section.ss-sec .ss-slide {
+    width: 100%;
+  }
+  body .ss-sec .ss-percent {
+    font-size: 56px;
+  }
+  body .ss-sec .ss-percent::first-letter {
+    font-size: 86px;
+  }
+
+  body .ss-sec .ss-quote {
+    margin-top: -20px;
+    padding-top: 26px;
+  }
+
+  body section.ss-sec .ss-title {
+    text-align: left;
+    text-transform: capitalize;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}

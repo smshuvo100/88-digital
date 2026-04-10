@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
@@ -159,12 +159,12 @@ export default function OurProcess() {
           initial="hidden"
           animate={inView ? "show" : "hidden"} // ✅ triggers on scroll
         >
-          OUR PROCESS FROM IDEA TO SCALE
+          Our Process from Idea to Scale
         </motion.h2>
 
         <div className="op-swiper-wrap">
           <Swiper
-            modules={[Autoplay, EffectFade]}
+            modules={[Pagination, Autoplay, EffectFade]}
             slidesPerView={1}
             spaceBetween={0}
             loop={true}
@@ -177,7 +177,8 @@ export default function OurProcess() {
               disableOnInteraction: false,
               pauseOnMouseEnter: false,
             }}
-            className="op-swiper"
+            pagination={{ clickable: true }}
+            className="os-swiper"
           >
             {processSlides.map((item, idx) => (
               <SwiperSlide key={idx}>

@@ -75,7 +75,7 @@ export default function OurServices() {
           whileInView="show"
           viewport={{ once: true, amount: 0.7 }}
         >
-          OUR SERVICES
+          Our Services
         </motion.h2>
       </div>
 
@@ -102,11 +102,11 @@ export default function OurServices() {
                 observer={true}
                 observeParents={true}
                 updateOnWindowResize={true}
-                autoplay={{
-                  delay: 2000,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: false,
-                }}
+                // autoplay={{
+                //   delay: 2000,
+                //   disableOnInteraction: false,
+                //   pauseOnMouseEnter: false,
+                // }}
                 pagination={{ clickable: true }}
                 className="os-swiper"
               >

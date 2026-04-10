@@ -229,3 +229,15 @@ section.os-sec h2.uppercase {
   width: auto;
   padding: 10px;
 }
+
+/*all mobile*/
+@media (max-width: 767px) {
+  section.os-sec h2.uppercase.center {
+    text-transform: capitalize;
+    text-align: left;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}

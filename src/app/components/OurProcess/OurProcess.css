@@ -114,3 +114,58 @@ section.op-sec h4.op-step img {
     object-position: center;
   }
 }
+
+/*all mobile*/
+@media (max-width: 767px) {
+  body section.op-sec {
+    padding: 60px 0 40px 0;
+  }
+  body section.op-sec .op-title {
+    text-transform: capitalize;
+  }
+
+  body section.op-sec .op-box {
+    flex-direction: column-reverse !important;
+  }
+
+  body section.op-sec .op-box .op-right img.op-img {
+    height: auto;
+  }
+
+  body section.op-sec .op-box h4.op-step {
+    font-size: 21px;
+  }
+
+  body section.op-sec .op-left .op-step img {
+    height: 24px !important;
+  }
+
+  body section.op-sec .op-left .op-step {
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  body section.op-sec .op-box p.text4 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  body
+    section.op-sec
+    .os-swiper
+    .swiper-pagination-bullets
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #ffffff;
+  }
+
+  body
+    section.op-sec
+    .os-swiper
+    .swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    background: #ffffff;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}

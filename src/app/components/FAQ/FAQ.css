@@ -210,5 +210,14 @@
   }
 }
 
-button.faq-q {
+/*all mobile*/
+@media (max-width: 767px) {
+  section.faq-sec .faq-title {
+    text-align: left;
+    text-transform: capitalize;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
 }

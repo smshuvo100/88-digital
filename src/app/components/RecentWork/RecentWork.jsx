@@ -119,7 +119,7 @@ export default function RecentWork() {
           whileInView="show"
           viewport={{ once: true, amount: 0.7 }}
         >
-          RECENT WORK
+          Recent Work
         </motion.h2>
       </div>
 
