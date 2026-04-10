@@ -235,124 +235,109 @@ sub header
 
 /* 
 =========================
-brand logo
+TOP SERVICES
 =========================
 */
 
-section.brand-logo-sec .brand-logos-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 20px;
-  max-width: 1020px;
-  margin: 0 auto;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-top: 30px;
+/* 
+service intro
+-----------------------
+*/
+
+section.service-intro-sec {
+  padding-top: 26px;
 }
 
-section.brand-logo-sec .brand-logos-wrap .box {
-  background: #ffffff;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  box-shadow: 0 1px 9px #0000000d;
-}
-
-section.brand-logo-sec .brand-logos-wrap .box img {
-  height: auto;
-  width: 85px;
-  /* object-fit: cover; */
-}
-
-section.brand-logo-sec {
-  padding-top: 100px;
+section.service-intro-sec p.text4 {
+  color: #59595b;
+  margin-top: 10px;
 }
 
 /* 
-=========================
-service cta
-=========================
+service design
+-----------------------
 */
 
-section.service-cta-sec {
-  background: linear-gradient(90deg, #f2dddd 0%, #e7ddf5 100%);
+section.service-design-sec {
   padding-top: 100px;
-  padding-bottom: 100px;
 }
 
-section.service-cta-sec .title-wrap {
-  max-width: 599px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 23px;
-  margin-bottom: 30px;
-}
-
-section.service-cta-sec .btn-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 11px;
-}
-
-section.service-cta-sec .btn-group a {
-  width: 400px;
-  /* text-align: center; */
-  /* margin: 0 auto; */
-  display: flex;
-  justify-content: center;
-  /* background: tan; */
-}
-
-section.service-cta-sec .btn-group .btn.border {
-  border: 1px solid #333333;
-  background: transparent;
-}
-
-section.service-cta-sec .btn-group .btn.border a {
-  background: transparent;
-  color: #333;
-}
-
-/* 
-=========================
-why choose  
-=========================
-*/
-
-section.why-choose-sec {
-  padding-top: 50px;
-}
-section.why-choose-sec .wrap {
+section.service-design-sec .design-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin-top: 35px;
 }
-section.why-choose-sec .wrap .box {
-  background: linear-gradient(90deg, #f2dddd 0%, #e7ddf5 100%);
+
+section.service-design-sec .design-wrap .box {
+  background: #fff;
+  box-shadow: 0 1px 9px #0000000d;
+  padding: 30px;
   border-radius: 16px;
-  position: relative;
-  height: 269px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
 }
-section.why-choose-sec .wrap .box .text-wrap {
-  padding: 0 40px;
-  /* position: relative; */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+
+section.service-design-sec .design-wrap .box img {
+  display: block;
 }
-section.why-choose-sec .wrap .box img {
-  position: absolute;
-  right: -23px;
-  bottom: -17px;
+
+section.service-design-sec .design-wrap .box h4 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
+section.service-design-sec .design-wrap .box p {
+  color: #59595b;
+  margin-bottom: 20px;
+}
+
+section.service-design-sec .design-wrap .box ul {
+  font-size: 16px;
+  line-height: 26px;
+  color: #59595b;
+  margin-left: 18px;
+}
+
+section.service-design-sec .design-wrap .box ul li {
+  margin-bottom: 7px;
+}
+
+/* 
+service process
+---------------------------
+*/
+
+section.service-process-sec {
+  padding-top: 100px;
+}
+
+section.service-process-sec .process-wrap {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  display: grid;
+}
+
+section.service-process-sec .process-wrap .box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 26px 19px;
+  box-shadow: 0 1px 9px #0000000d;
+}
+
+section.service-process-sec h4 {
+  font-weight: 700;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+section.service-process-sec img {
+  display: block;
+}
+
+section.service-process-sec p {
+  color: #59595b;
+}
+
+section.service-process-sec h2 {
+  margin-bottom: 40px;
 }

@@ -1,0 +1,36 @@
+/* 
+=========================
+brand logo
+=========================
+*/
+
+section.brand-logo-sec .brand-logos-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  /* max-width: 1020px;
+  margin: 0 auto; */
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 30px;
+}
+
+section.brand-logo-sec .brand-logos-wrap .box {
+  background: #ffffff;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 1px 9px #0000000d;
+}
+
+section.brand-logo-sec .brand-logos-wrap .box img {
+  height: auto;
+  width: 85px;
+  /* object-fit: cover; */
+}
+
+section.brand-logo-sec {
+  padding-top: 100px;
+}

@@ -29,7 +29,7 @@ export default function page() {
         >
           <div className="service-hero-content">
             <div className="container">
-              <h1 className="title3 uppercase">Website Design</h1>
+              <h1 className="title3 uppercase">software development</h1>
             </div>
           </div>
         </div>

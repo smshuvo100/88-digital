@@ -1,0 +1,36 @@
+/* 
+=========================
+why choose  
+=========================
+*/
+
+section.why-choose-sec {
+  padding-top: 50px;
+}
+section.why-choose-sec .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 35px;
+}
+section.why-choose-sec .wrap .box {
+  background: linear-gradient(90deg, #f2dddd 0%, #e7ddf5 100%);
+  border-radius: 16px;
+  position: relative;
+  height: 269px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+section.why-choose-sec .wrap .box .text-wrap {
+  padding: 0 40px;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+section.why-choose-sec .wrap .box img {
+  position: absolute;
+  right: -23px;
+  bottom: -17px;
+}

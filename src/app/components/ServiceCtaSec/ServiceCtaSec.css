@@ -1,0 +1,49 @@
+/* 
+=========================
+service cta
+=========================
+*/
+
+section.service-cta-sec {
+  background: linear-gradient(90deg, #f2dddd 0%, #e7ddf5 100%);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+section.service-cta-sec .title-wrap {
+  max-width: 599px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  margin-bottom: 30px;
+}
+
+section.service-cta-sec .btn-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+}
+
+section.service-cta-sec .btn-group a {
+  width: 400px;
+  /* text-align: center; */
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  /* background: tan; */
+}
+
+section.service-cta-sec .btn-group .btn.border {
+  border: 1px solid #333333;
+  background: transparent;
+}
+
+section.service-cta-sec .btn-group .btn.border a {
+  background: transparent;
+  color: #333;
+}
