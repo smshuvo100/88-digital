@@ -55,11 +55,64 @@ h6 {
   font-family: var(--font-heading);
 }
 
+/*all mobile*/
+@media (max-width: 767px) {
+  body .title2,
+  body h1,
+  body .title1 {
+    font-size: 46px;
+    line-height: 56px;
+  }
+
+  body .text2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  body .text3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  body .title3,
+  body h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .title2,
+  body h1,
+  body .title1 {
+    font-size: 46px;
+    line-height: 56px;
+  }
+
+  body .text2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  body .text3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  body .title3,
+  body h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
 .title1 {
   font-size: 80px;
   line-height: 90px;
   font-weight: 700;
 }
+
 .title2,
 h1 {
   font-size: 56px;

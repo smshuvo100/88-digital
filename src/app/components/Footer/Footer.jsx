@@ -198,8 +198,7 @@ export default function Footer() {
         >
           {/* heading */}
           <motion.h2 className="ft-title title1" variants={fadeUpTitle}>
-            LET’S WORK
-            <br />
+            LET’S WORK <br />
             TOGETHER
           </motion.h2>
 

@@ -118,3 +118,18 @@
 .hero-inner .text2 {
   color: var(--white-100);
 }
+
+/*all mobile*/
+@media (max-width: 767px) {
+  body .hero-inner .title1 br {
+    display: none;
+  }
+
+  body .hero-sec {
+    height: 800px;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}

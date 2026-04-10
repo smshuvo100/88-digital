@@ -55,6 +55,10 @@ export default function Quote2() {
   };
 
   const words = [
+    "We help aspiring entrepreneurs turn",
+    "their ideas into successful business",
+  ];
+  const wordsMobile = [
     "We help aspiring",
     "entrepreneurs turn",
     "their ideas into",
@@ -63,7 +67,7 @@ export default function Quote2() {
 
   return (
     <section className="quote-sec">
-      <div className="container">
+      <div className="full-container">
         <motion.div
           ref={ref}
           className="quote-wrap"
@@ -73,6 +77,20 @@ export default function Quote2() {
         >
           <div className="quote-text">
             {words.map((word, index) => (
+              <div key={index} className="line-mask">
+                <motion.span
+                  className="line-item"
+                  variants={wordVariants}
+                  custom={index}
+                >
+                  {word}
+                </motion.span>
+              </div>
+            ))}
+          </div>
+
+          <div className="quote-text mobile">
+            {wordsMobile.map((word, index) => (
               <div key={index} className="line-mask">
                 <motion.span
                   className="line-item"

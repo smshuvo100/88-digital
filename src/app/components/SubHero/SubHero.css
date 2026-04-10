@@ -31,7 +31,7 @@ section.sub-hero-sec .wrap .sub-title p {
 
 section.sub-hero-sec h2.title2 {
   text-align: center;
-  line-height: 72px;
+  /* line-height: 72px; */
 }
 
 section.sub-hero-sec .btn {

@@ -28,3 +28,11 @@ section.quote-sec p {
   line-height: 90px;
   text-transform: uppercase;
 } */
+
+/*all mobile*/
+@media (max-width: 767px) {
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}
