@@ -46,3 +46,50 @@ section.sub-hero-sec1 .wrap .call2 {
   justify-content: end;
   align-items: center;
 }
+
+/*all mobile*/
+@media (max-width: 767px) {
+  body section.sub-hero-sec1 .wrap {
+    flex-direction: column;
+  }
+  body section.sub-hero-sec1 .wrap .call1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body section.sub-hero-sec1 .wrap .call2 {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body section.sub-hero-sec1 .wrap .call1 .sub-title {
+    justify-content: center;
+  }
+
+  body
+    section.sub-hero-sec1
+    .wrap
+    .call1
+    .sub-title
+    h2.gradient-text.uppercase {
+    font-size: 26px;
+  }
+
+  body section.sub-hero-sec1 .wrap .call1 h2.title2.uppercase {
+    text-align: center;
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  body section.sub-hero-sec1 .wrap .call2 img {
+    width: 61%;
+    height: auto;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}
