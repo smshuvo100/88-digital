@@ -40,7 +40,7 @@ export default function page() {
 
               <p className="text4">
                 A world where anyone can confidently start a successful business
-                with expert guidance and proven strategies.
+                with expert guidance and <b>proven strategies.</b>
               </p>
             </div>
 
@@ -55,8 +55,11 @@ export default function page() {
               </div>
 
               <p className="text4">
-                We provide professionals and families with solutions in market
-                research, financial planning, branding, and growth marketing.
+                We provide professionals and families with solutions in{" "}
+                <b>
+                  market research, financial planning, branding, and growth
+                  marketing.
+                </b>
               </p>
             </div>
           </div>

@@ -89,24 +89,14 @@ export default function HomeHero() {
               </motion.p>
 
               {/* Scroll CTA */}
-              <motion.div
-                className="scroll"
-                variants={fadeUpScroll}
-                whileHover={{ y: -3 }}
-                animate={{ y: [0, -10, 0] }} // ✅ more visible but still smooth
-                transition={{
-                  duration: 3.0, // ✅ slower floating
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                onClick={() =>
-                  document.getElementById("next-section")?.scrollIntoView({
-                    behavior: "smooth",
-                  })
-                }
-              >
+              <motion.div className="scroll">
                 <p className="text3">Scroll to Feel the Heat</p>
-                <BsArrowDown />
+                <div className="arrow">
+                  <div className="hover-wrap">
+                    <div className="line"></div>
+                  </div>
+                  <BsArrowDown />
+                </div>
               </motion.div>
             </motion.div>
           </div>

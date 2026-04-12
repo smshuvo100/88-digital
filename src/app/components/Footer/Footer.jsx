@@ -246,15 +246,13 @@ export default function Footer() {
           </motion.p>
 
           {/* scroll top */}
-          <motion.button
-            type="button"
-            className="ft-top"
-            aria-label="Scroll to top"
-            variants={fadeUpItem}
-            whileHover={{ y: -3 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <BsArrowUp />
+          <motion.button type="button" className="ft-top">
+            <div className="arrow">
+              <BsArrowUp />
+              <div className="hover-wrap">
+                <div className="line"></div>
+              </div>
+            </div>
           </motion.button>
         </motion.div>
       </div>

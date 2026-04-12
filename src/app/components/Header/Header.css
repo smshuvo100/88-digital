@@ -13,7 +13,7 @@
 }
 
 .nav {
-  height: 74px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,15 +28,16 @@
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.75);
+  color: #c6c6c6;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
+  font-family: var(--font-body);
 }
 
 .nav-links a:hover {
@@ -45,14 +46,15 @@
 
 .nav-links a.active {
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: var(--font-heading);
 }
 
 .nav-link {
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+  /* font-size: 14px;
+  font-weight: 500; */
 
   display: inline-flex;
   align-items: center;
@@ -78,14 +80,11 @@
   top: 52px; /* little lower */
   left: 0;
   width: 260px;
-
-  background: rgba(20, 20, 20, 0.9);
-  border-radius: 12px;
+  background: #333333;
+  border-radius: 8px;
   padding: 12px;
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   opacity: 0;
   visibility: hidden;
   transform: translateY(6px);
@@ -93,6 +92,7 @@
 
   /* ✅ mouse hover always works */
   pointer-events: none;
+  border: 1px solid #8d8c8e;
 }
 
 /* show dropdown */
@@ -105,10 +105,11 @@
 
 .dropdown a {
   display: block;
-  padding: 10px;
+  padding: 11px;
   border-radius: 10px;
   color: #fff;
   text-decoration: none;
+  /* font-family: var(--font-body); */
 }
 
 .dropdown a:hover {

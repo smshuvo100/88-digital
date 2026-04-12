@@ -150,7 +150,9 @@
 
 /* question open text */
 .faq-item.is-open .faq-qtext {
-  font-size: 25px;
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 500;
 
   /* ✅ FIX: same as .faq-qtext */
   transition:
@@ -189,7 +191,7 @@
 /* answer open text */
 .faq-a.open .faq-atext {
   opacity: 1;
-  color: rgba(255, 255, 255, 0.75);
+  color: #fff;
   padding: 0 18px 30px;
 
   /* ✅ FIX: same transitions */

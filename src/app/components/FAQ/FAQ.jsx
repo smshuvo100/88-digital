@@ -113,7 +113,7 @@ export default function FAQ() {
                 {/* ✅ Keep your CSS slide system exactly same */}
                 <div className={`faq-a ${isOpen ? "open" : ""}`}>
                   <div className="faq-a-inner">
-                    <p className="faq-atext text5">{itemData.a}</p>
+                    <p className="faq-atext text4">{itemData.a}</p>
                   </div>
                 </div>
               </motion.div>

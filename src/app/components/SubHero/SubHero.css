@@ -7,7 +7,9 @@ section.sub-hero-sec {
   overflow: hidden;
   position: relative;
 }
-
+section.sub-hero-sec .btn {
+  background: transparent;
+}
 section.sub-hero-sec .wrap {
   height: 800px;
   display: flex;
