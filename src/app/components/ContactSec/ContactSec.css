@@ -3,7 +3,11 @@
     
 =====================================
 */
-
+section.contact-sec {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
 section.contact-sec .form-box {
   background: #fff;
   padding: 40px;
@@ -11,32 +15,88 @@ section.contact-sec .form-box {
   box-shadow: 0px 0px 16px 0 rgba(0, 0, 0, 0.08);
   margin-top: 40px;
 }
-.form-box input,
-.form-box textarea {
+
+/* Add to your existing CSS */
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
   border: 1px solid #e0e2e6;
   padding: 14px 20px;
   border-radius: 8px;
-  margin-bottom: 20px;
-  color: #8d8c8e;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: var(--font-body);
 }
-.form-box input {
-  width: 100%;
+
+.form-group input {
   height: 54px;
 }
 
-.form-box textarea {
-  width: 100%;
+.form-group textarea {
   height: 94px;
+  resize: vertical;
 }
 
-section.contact-sec {
-  padding-bottom: 100px;
-  padding-top: 40px;
+.form-group label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 4px;
+  color: #8d8c8e;
+  /* font-size: 16px; */
+  transition: all 0.2s ease;
+  pointer-events: none;
+  font-family: var(--font-body);
 }
-/*all mobile*/
+
+.form-group:has(textarea) label {
+  top: 18px;
+  transform: translateY(0);
+}
+
+/* Float effect */
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #8d8c8e;
+}
+
+/* Hide placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: transparent;
+}
+
+.form-group label span {
+  color: #ff460c;
+}
+section.contact-sec button {
+  width: 200px;
+}
 @media (max-width: 767px) {
   section.contact-sec .container h2.uppercase {
     text-transform: capitalize;
+  }
+
+  body section.contact-sec {
+    padding-top: 100px;
+  }
+
+  body section.contact-sec .form-box {
+    padding: 30px 20px;
   }
 }
 

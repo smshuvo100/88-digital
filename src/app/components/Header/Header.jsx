@@ -168,7 +168,7 @@ export default function Header() {
               </a>
 
               <AnimatePresence>
-                {!open && (
+                {open && (
                   <motion.div
                     {...dropdownMotion}
                     className="dropdown show"
