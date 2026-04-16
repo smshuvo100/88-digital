@@ -24,6 +24,7 @@
 }
 body section.custom-services-section .service-full-image img {
   height: auto;
+  display: none;
 }
 .custom-services-container {
   display: flex;
