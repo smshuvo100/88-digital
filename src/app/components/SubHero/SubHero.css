@@ -7,9 +7,11 @@ section.sub-hero-sec {
   overflow: hidden;
   position: relative;
 }
+
 section.sub-hero-sec .btn {
   background: transparent;
 }
+
 section.sub-hero-sec .wrap {
   height: 800px;
   display: flex;
@@ -40,14 +42,32 @@ section.sub-hero-sec .btn {
   padding-top: 15px;
 }
 
+/* optional: smoother button icon hover */
+section.sub-hero-sec .btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+section.sub-hero-sec .btn a svg {
+  transition: transform 0.35s ease;
+}
+
+section.sub-hero-sec .btn a:hover svg {
+  transform: translateX(6px);
+}
+
 /*all mobile*/
 @media (max-width: 767px) {
   section.sub-hero-sec h2.gradient-text.uppercase {
     font-size: 26px;
   }
+
   body section.sub-hero-sec .wrap .sub-title {
     margin-bottom: 20px;
   }
+
   section.sub-hero-sec h2.title2.uppercase {
     font-size: 40px;
     line-height: 50px;
