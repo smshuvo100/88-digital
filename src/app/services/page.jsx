@@ -16,6 +16,7 @@ export default function OurServicesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
   const itemRefs = useRef([]);
+  const hasUserInteractedRef = useRef(false);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   const servicesData = [
@@ -115,6 +116,8 @@ export default function OurServicesSection() {
   };
 
   const handleTabClick = (idx) => {
+    hasUserInteractedRef.current = true;
+
     if (idx === activeIndex) {
       if (typeof window !== "undefined" && window.innerWidth <= 1024) {
         scrollActiveItemIntoView(idx);
@@ -126,6 +129,7 @@ export default function OurServicesSection() {
   };
 
   useEffect(() => {
+    if (!hasUserInteractedRef.current) return;
     if (typeof window === "undefined" || window.innerWidth > 1024) return;
 
     const timer = setTimeout(() => {
