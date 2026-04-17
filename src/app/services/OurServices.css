@@ -381,6 +381,8 @@ section.service-process-sec h2 {
 
   .mobile-service-content .service-full-image img {
     height: 320px;
+    object-fit: cover;
+    display: none;
   }
 }
 
