@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import Header2 from "../components/Header/Header2";
 import Footer from "../components/Footer/Footer";
 import FAQ from "../components/FAQ/FAQ";
@@ -15,6 +15,7 @@ import "./OurServices.css";
 export default function OurServicesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
+  const itemRefs = useRef([]);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   const servicesData = [
@@ -97,6 +98,43 @@ export default function OurServicesSection() {
     },
   };
 
+  const scrollActiveItemIntoView = (index) => {
+    if (typeof window === "undefined" || window.innerWidth > 1024) return;
+
+    const target = itemRefs.current[index];
+    if (!target) return;
+
+    const rect = target.getBoundingClientRect();
+    const absoluteTop = window.pageYOffset + rect.top;
+    const offset = 16;
+
+    window.scrollTo({
+      top: absoluteTop - offset,
+      behavior: "smooth",
+    });
+  };
+
+  const handleTabClick = (idx) => {
+    if (idx === activeIndex) {
+      if (typeof window !== "undefined" && window.innerWidth <= 1024) {
+        scrollActiveItemIntoView(idx);
+      }
+      return;
+    }
+
+    setActiveIndex(idx);
+  };
+
+  useEffect(() => {
+    if (typeof window === "undefined" || window.innerWidth > 1024) return;
+
+    const timer = setTimeout(() => {
+      scrollActiveItemIntoView(activeIndex);
+    }, 460);
+
+    return () => clearTimeout(timer);
+  }, [activeIndex]);
+
   return (
     <>
       <Header2 />
@@ -121,49 +159,82 @@ export default function OurServicesSection() {
             {servicesData.map((service, idx) => (
               <motion.div
                 key={service.num}
+                ref={(el) => {
+                  itemRefs.current[idx] = el;
+                }}
                 variants={itemVariants}
                 className={`service-accordion-item ${
                   activeIndex === idx ? "active" : ""
                 }`}
+                layout
+                transition={{ duration: 0.38, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <div
                   className={`service-nav-item ${
                     activeIndex === idx ? "active" : ""
                   }`}
-                  onClick={() => setActiveIndex(idx)}
+                  onClick={() => handleTabClick(idx)}
                 >
                   <span className="nav-num">{service.num}</span>
                   <span className="nav-title">{service.title}</span>
                 </div>
 
-                {/* Mobile accordion content */}
-                <div
-                  className={`mobile-service-content ${
-                    activeIndex === idx ? "open" : ""
-                  }`}
-                >
-                  <div className="slide-content-wrapper">
-                    <div className="service-full-image-wrap">
-                      <div className="service-full-image">
-                        <Image
-                          src={service.image}
-                          alt={service.alt}
-                          width={1200}
-                          height={700}
-                          unoptimized
-                        />
-                      </div>
-                    </div>
+                <AnimatePresence initial={false} mode="wait">
+                  {activeIndex === idx && (
+                    <motion.div
+                      key={`mobile-content-${service.num}`}
+                      className="mobile-service-content open"
+                      initial={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        height: "auto",
+                        opacity: 1,
+                      }}
+                      exit={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      transition={{
+                        height: { duration: 0.42, ease: [0.25, 0.1, 0.25, 1] },
+                        opacity: { duration: 0.22, ease: "easeOut" },
+                      }}
+                    >
+                      <motion.div
+                        className="slide-content-wrapper"
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -4 }}
+                        transition={{
+                          duration: 0.24,
+                          ease: "easeOut",
+                          delay: 0.05,
+                        }}
+                      >
+                        <div className="service-full-image-wrap">
+                          <div className="service-full-image">
+                            <Image
+                              src={service.image}
+                              alt={service.alt}
+                              width={1200}
+                              height={700}
+                              unoptimized
+                            />
+                          </div>
+                        </div>
 
-                    <p className="service-description">{service.desc}</p>
+                        <p className="service-description">{service.desc}</p>
 
-                    <div className="btn">
-                      <Link href={service.link} className="gradient-btn">
-                        LEARN MORE <BsArrowRight className="btn-icon" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                        <div className="btn">
+                          <Link href={service.link} className="gradient-btn">
+                            LEARN MORE <BsArrowRight className="btn-icon" />
+                          </Link>
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             ))}
           </motion.div>
