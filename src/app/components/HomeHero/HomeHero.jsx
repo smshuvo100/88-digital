@@ -4,6 +4,7 @@
 import { BsArrowDown } from "react-icons/bs";
 import { motion } from "framer-motion";
 import "./HomeHero.css";
+import Link from "next/link";
 
 export default function HomeHero() {
   // ✅ slower + deeper from bottom (more distance)
@@ -57,7 +58,7 @@ export default function HomeHero() {
   };
 
   return (
-    <main className="home">
+    <main className="home" id="home-sec">
       <section className="hero-sec">
         {/* Background video area */}
         <div className="bg-video">
@@ -91,12 +92,14 @@ export default function HomeHero() {
               {/* Scroll CTA */}
               <motion.div className="scroll">
                 <p className="text3">Scroll to Feel the Heat</p>
-                <div className="arrow">
-                  <div className="hover-wrap">
-                    <div className="line"></div>
+                <a href="#next-section">
+                  <div className="arrow">
+                    <div className="hover-wrap">
+                      <div className="line"></div>
+                    </div>
+                    <BsArrowDown />
                   </div>
-                  <BsArrowDown />
-                </div>
+                </a>
               </motion.div>
             </motion.div>
           </div>

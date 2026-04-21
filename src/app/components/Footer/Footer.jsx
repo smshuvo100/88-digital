@@ -247,12 +247,14 @@ export default function Footer() {
 
           {/* scroll top */}
           <motion.button type="button" className="ft-top">
-            <div className="arrow">
-              <BsArrowUp />
-              <div className="hover-wrap">
-                <div className="line"></div>
+            <a href="#home-sec">
+              <div className="arrow">
+                <BsArrowUp />
+                <div className="hover-wrap">
+                  <div className="line"></div>
+                </div>
               </div>
-            </div>
+            </a>
           </motion.button>
         </motion.div>
       </div>

@@ -104,9 +104,15 @@ section.mission-vision-sec .flex-box .box p {
   our-values-sec
 =====================================
 */
+section.our-values-sec h2.uppercase.center {
+  color: #242324;
+}
 
+section.our-values-sec p.text4.center {
+  color: #4d4b4e;
+}
 section.our-values-sec .box {
-  width: 473px;
+  width: 568px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

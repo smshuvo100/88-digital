@@ -52,12 +52,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at 20% 45%,
     rgba(0, 0, 0, 0.9) 0%,
     rgba(0, 0, 0, 0.6) 55%,
     rgba(0, 0, 0, 0.2) 100%
-  );
+  ); */
   pointer-events: none;
   z-index: 1;
 }

@@ -202,7 +202,7 @@ h6 {
   background: var(--gradient-primary);
   color: var(--white);
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
   border: 0;
@@ -212,6 +212,8 @@ h6 {
   align-items: center;
   gap: 10px;
   transition: background 0.3s ease-in-out;
+  font-family: var(--font-body);
+  letter-spacing: 0.3px;
 }
 .btn button svg,
 .btn a svg {

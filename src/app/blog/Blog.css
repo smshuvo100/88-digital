@@ -9,7 +9,10 @@
   flex-direction: column;
   gap: 15px;
 }
-
+input.search-input::placeholder {
+  color: #8d8c8e;
+  font-size: 12px;
+}
 .blog-header p {
   color: var(--gray-300);
 }
@@ -31,7 +34,7 @@
   border-radius: 16px;
   font-size: 1rem;
   transition: all 0.3s;
-  background-color: white;
+  background-color: #fafafa;
 }
 
 .search-input:focus {
@@ -60,15 +63,16 @@
 }
 
 .category-btn {
-  padding: 8px 20px;
+  padding: 10px 14px;
   border-radius: 8px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   transition: all 0.3s;
   cursor: pointer;
   background-color: #f9fafb;
   color: var(--gray-300);
   border: 1px solid #e3e3e3;
+  font-family: var(--font-heading);
 }
 
 .category-btn:hover {
@@ -151,10 +155,10 @@
 }
 
 .card-title {
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 500;
   color: var(--gray-500);
-  line-height: 35px;
+  line-height: 42px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -614,4 +618,8 @@ h2.article-title {
 
 .article-image {
   margin-bottom: 50px;
+}
+
+.card-meta .mata-wrap svg.meta-icon {
+  display: none;
 }
