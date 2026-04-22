@@ -149,7 +149,7 @@ export default function SingleBlogPage() {
                 className="article-meta"
               >
                 <div className="article-meta-item">
-                  <FaCalendar className="meta-icon" />
+                  {/* <FaCalendar className="meta-icon" /> */}
                   <span>
                     {new Date(blog.date).toLocaleDateString("en-US", {
                       year: "numeric",
@@ -159,7 +159,8 @@ export default function SingleBlogPage() {
                   </span>
                 </div>
                 <div className="article-meta-item">
-                  <FaClock className="meta-icon" />
+                  {/* <FaClock className="meta-icon" /> */}
+                  <span className="dot"></span>
                   <span>{blog.time}</span>
                 </div>
               </motion.div>

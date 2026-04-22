@@ -28,7 +28,7 @@ export const blogsData = {
             <li>Pivot or refine early: If something's not working, you'll know before you burn through your entire budget.</li>
           </ul>
           
-          <p>💡 Think of it like building a car: With MVP, you build the engine and wheels first, not the leather seats and the sunroof. Once it moves, you improve based on how people actually drive it.</p>
+          <p class='highlight'>💡 <b>Think of it like building a car:</b> With MVP, you build the engine and wheels first, not the leather seats and the sunroof. Once it moves, you improve based on how people actually drive it.</p>
           
           <h2>2. 🧭 Step 1: Identify the Core Problem</h2>
           
@@ -39,7 +39,7 @@ export const blogsData = {
             <li>Who exactly has this problem?</li>
           </ul>
           
-          <p>👉 Example: If you're building a food delivery app, the core problem might be "ordering homemade meals easily from local chefs." You don't need fancy loyalty points or live tracking yet — just a smooth way to browse and place orders.</p>
+          <p class='highlight'>👉 <b>Example:</b> If you're building a food delivery app, the core problem might be "ordering homemade meals easily from local chefs." You don't need fancy loyalty points or live tracking yet — just a smooth way to browse and place orders.</p>
           
           <p>What's the simplest way to solve it?</p>
           
