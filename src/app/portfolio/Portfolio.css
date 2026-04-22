@@ -445,15 +445,16 @@
 }
 
 .category-btn {
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-weight: 400;
-  font-size: 14px;
-  transition: all 0.3s;
   cursor: pointer;
-  background-color: #f9fafb;
   color: var(--gray-300);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font-heading);
+  background-color: #f9fafb;
   border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: all 0.3s;
 }
 
 .category-btn:hover {
