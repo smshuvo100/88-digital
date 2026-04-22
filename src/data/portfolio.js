@@ -7,7 +7,7 @@ export const portfolioData = {
       title: "HANILOR - LACTALIS GROUP - Website Design",
       year: "2025",
       salesRevenue: 45,
-      featureImage: "/assets/work2.jpg",
+      featureImage: "/assets/portfolio-hero.png",
       tags: ["Website Design", "UI/UX Design"],
       client: "Lactalis Group",
       industry: "Food & Beverage",

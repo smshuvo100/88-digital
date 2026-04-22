@@ -120,9 +120,10 @@ export default function Header() {
           initial="hidden"
           animate="show"
         >
+          {}
           <motion.a className="brand" href="/" variants={linkVariants}>
             <Image
-              src="/assets/logo.png"
+              src="/assets/88-digital-logo-white.svg"
               alt="88 Digital"
               width={140}
               height={34}
@@ -144,6 +145,7 @@ export default function Header() {
             </motion.li>
 
             <motion.li variants={linkVariants}>
+              {}
               <a
                 className={pathname === "/about-us" ? "active" : ""}
                 href="/about-us"
@@ -192,6 +194,7 @@ export default function Header() {
             </motion.li>
 
             <motion.li variants={linkVariants}>
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
               <a
                 className={pathname === "/portfolio" ? "active" : ""}
                 href="/portfolio"
