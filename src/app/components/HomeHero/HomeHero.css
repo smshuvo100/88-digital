@@ -80,21 +80,47 @@
   font-size: 14px;
   opacity: 0.75;
 }
-section.hero-sec .scroll .arrow .line {
-  width: 2px;
-  height: 0px;
-  background: #fff;
-  transition: all 0.35s ease-in-out;
-}
-section.hero-sec .scroll .arrow:hover .line {
-  height: 30px;
-}
 
-section.hero-sec .scroll .arrow .hover-wrap {
+/*  
+=======================
+scroll arrow anima
+=======================
+*/
+
+section.hero-sec .scroll .arrow {
+  width: 35px;
+  height: 55px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-block: -3px;
+  align-items: flex-start;
+  color: #fff;
+  cursor: pointer;
+}
+section.hero-sec .scroll .arrow .scroll-arrow-svg {
+  width: 35px;
+  height: 55px;
+  overflow: visible;
+}
+section.hero-sec .scroll .arrow .arrow-main {
+  fill: currentColor;
+  transform: translateY(0);
+  transition: transform 0.35s ease-in-out;
+}
+section.hero-sec .scroll .arrow .arrow-extra-line {
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-linecap: round;
+  transform-box: fill-box;
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform 0.35s ease-in-out;
+}
+section.hero-sec .scroll .arrow-link:hover .arrow .arrow-main {
+  transform: translateY(14px);
+}
+section.hero-sec .scroll .arrow-link:hover .arrow .arrow-extra-line {
+  transform: scaleY(1);
 }
 
 /* Responsive */
