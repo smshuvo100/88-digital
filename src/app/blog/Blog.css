@@ -378,7 +378,7 @@ input.search-input::placeholder {
 
 .blog-content p {
   margin-bottom: 15px;
-  color: #595959;
+  color: #59595b;
 }
 
 .blog-content ul,
@@ -649,7 +649,7 @@ h2.article-title {
 }
 
 article.blog-article p.highlight {
-  background: #fae9e6;
+  background: #fc4c2f1a;
   border-radius: 8px;
   padding: 16px;
 }

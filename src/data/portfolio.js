@@ -77,7 +77,7 @@ export const portfolioData = {
       title: "DIEGO'S Bags - Mobile App",
       year: "2025",
       salesRevenue: 45,
-      featureImage: "/assets/work2.jpg",
+      featureImage: "/assets/glasse.jpg",
       tags: ["Mobile Development", "UI/UX Design"],
       client: "Diego's Bags",
       industry: "Fashion Retail",
