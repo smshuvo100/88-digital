@@ -55,7 +55,7 @@ section.contact-sec .form-box {
   /* font-size: 16px; */
   transition: all 0.2s ease;
   pointer-events: none;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
 }
 
 .form-group:has(textarea) label {
