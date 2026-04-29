@@ -92,14 +92,6 @@ export default function HomeHero() {
               {/* Scroll CTA */}
               <motion.div className="scroll" variants={fadeUpScroll}>
                 <p className="text3">Scroll to Feel the Heat</p>
-                {/* <a href="#next-section">
-                  <div className="arrow">
-                    <div className="hover-wrap">
-                      <div className="line"></div>
-                    </div>
-                    <BsArrowDown />
-                  </div>
-                </a> */}
 
                 <a href="#next-section" className="arrow-link">
                   <div className="arrow">
@@ -108,18 +100,8 @@ export default function HomeHero() {
                       viewBox="0 0 16 30"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <line
-                        className="arrow-extra-line"
-                        x1="8"
-                        y1="1"
-                        x2="8"
-                        y2="15"
-                      />
-                      <path
-                        className="arrow-main"
-                        fillRule="evenodd"
-                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"
-                      />
+                      {/* ১০০% নিখুঁত Path Morphing - কোনো এক্সট্রা লাইন নেই! */}
+                      <path className="arrow-main" fillRule="evenodd" />
                     </svg>
                   </div>
                 </a>
@@ -130,8 +112,4 @@ export default function HomeHero() {
       </section>
     </main>
   );
-}
-
-{
-  /* <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"></path></svg> */
 }

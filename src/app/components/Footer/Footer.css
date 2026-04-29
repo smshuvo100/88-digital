@@ -201,3 +201,43 @@ footer.ft-sec .btn {
 /*ipad*/
 @media (min-width: 768px) and (max-width: 1024px) {
 }
+footer.ft-sec .ft-top .arrow {
+  width: 35px;
+  height: 55px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #000;
+  cursor: pointer;
+}
+
+footer.ft-sec .ft-top .scroll-arrow-svg {
+  width: 35px;
+  height: 55px;
+  overflow: visible;
+}
+
+/* 🔥 অরিজিনাল অ্যারো শেপ (কোনো transform নেই) */
+footer.ft-sec .ft-top .arrow-main {
+  fill: currentColor;
+  /* CSS-এর মাধ্যমে শেপ ড্র করা হলো */
+  d: path(
+    "M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+  );
+  transition: d 0.35s ease-in-out; /* শেপটিকে স্মুথলি স্ট্রেচ করবে */
+}
+
+/* 🔥 হোভার করলে অ্যারোর মাথা উপরে উঠবে এবং লেজ নিচে ফিক্সড থাকবে (Shape Morphing) */
+footer.ft-sec .ft-top .arrow-link:hover .arrow .arrow-main {
+  /* অ্যারোর মাথাকে ম্যাথমেটিক্যালি ১৪ পিক্সেল উপরে ড্র করা হয়েছে */
+  d: path(
+    "M8 15a.5.5 0 0 0 .5-.5V-11.293l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 -11.293V14.5a.5.5 0 0 0 .5.5"
+  );
+}
+
+footer.ft-sec button.ft-top {
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+}

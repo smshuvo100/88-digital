@@ -81,48 +81,6 @@
   opacity: 0.75;
 }
 
-/*  
-=======================
-scroll arrow anima
-=======================
-*/
-
-section.hero-sec .scroll .arrow {
-  width: 35px;
-  height: 55px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  color: #fff;
-  cursor: pointer;
-}
-section.hero-sec .scroll .arrow .scroll-arrow-svg {
-  width: 35px;
-  height: 55px;
-  overflow: visible;
-}
-section.hero-sec .scroll .arrow .arrow-main {
-  fill: currentColor;
-  transform: translateY(0);
-  transition: transform 0.35s ease-in-out;
-}
-section.hero-sec .scroll .arrow .arrow-extra-line {
-  stroke: currentColor;
-  stroke-width: 1;
-  stroke-linecap: round;
-  transform-box: fill-box;
-  transform-origin: top center;
-  transform: scaleY(0);
-  transition: transform 0.35s ease-in-out;
-}
-section.hero-sec .scroll .arrow-link:hover .arrow .arrow-main {
-  transform: translateY(14px);
-}
-section.hero-sec .scroll .arrow-link:hover .arrow .arrow-extra-line {
-  transform: scaleY(1);
-}
-
 /* Responsive */
 @media (max-width: 992px) {
   .nav-links {
@@ -174,4 +132,45 @@ section.hero-sec .scroll .arrow-link:hover .arrow .arrow-extra-line {
 
 /*ipad*/
 @media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/*  
+=======================
+scroll arrow anima
+=======================
+*/
+
+section.hero-sec .scroll .arrow {
+  width: 35px;
+  height: 55px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  cursor: pointer;
+}
+
+section.hero-sec .scroll .arrow .scroll-arrow-svg {
+  width: 35px;
+  height: 55px;
+  overflow: visible;
+}
+
+/* 🔥 অরিজিনাল অ্যারো শেপ (Path Morphing Magic) */
+section.hero-sec .scroll .arrow .arrow-main {
+  fill: currentColor;
+  /* CSS-এর মাধ্যমে অরিজিনাল শেপ ড্র করা হলো */
+  d: path(
+    "M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"
+  );
+  transition: d 0.35s ease-in-out;
+}
+
+/* 🔥 হোভার করলে অ্যারোর মাথা ১৪ পিক্সেল নিচে নামবে, কিন্তু লেজ ফিক্সড থাকবে */
+section.hero-sec .scroll .arrow-link:hover .arrow .arrow-main {
+  /* ম্যাথমেটিক্যালি মাথাটিকে ১৪ পিক্সেল নিচে ড্র করা হয়েছে (v11.793 -> v25.793 এবং L7.5 13.293 -> L7.5 27.293) */
+  d: path(
+    "M8 1a.5.5 0 0 1 .5.5v25.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 27.293V1.5A.5.5 0 0 1 8 1"
+  );
 }
