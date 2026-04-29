@@ -70,7 +70,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         disabled={currentPage === 1}
         className="pagination-btn"
       >
-        <FaChevronLeft /> Prev
+        <FaChevronLeft />
       </motion.button>
 
       {getPageNumbers().map((page, index) => (
@@ -97,7 +97,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         disabled={currentPage === totalPages}
         className="pagination-btn"
       >
-        Next <FaChevronRight />
+        <FaChevronRight />
       </motion.button>
     </motion.div>
   );
