@@ -174,59 +174,6 @@ footer.ft-sec .btn {
   text-align: center;
 }
 
-/* 
-scroll top arrow animation: line grows on hover, button moves up on hover 
-============================================================================
-*/
-
-footer.ft-sec .ft-top .arrow {
-  width: 35px;
-  height: 55px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; /* 👈 only change */
-  color: #000;
-  cursor: pointer;
-}
-
-footer.ft-sec .ft-top .scroll-arrow-svg {
-  width: 35px;
-  height: 55px;
-  overflow: visible;
-}
-
-footer.ft-sec .ft-top .arrow-main {
-  fill: currentColor;
-  transform: translateY(0);
-  transition: transform 0.35s ease-in-out;
-}
-
-footer.ft-sec .ft-top .arrow-extra-line {
-  stroke: currentColor;
-  stroke-width: 1;
-  stroke-linecap: round;
-  transform-box: fill-box;
-  transform-origin: top center;
-  transform: scaleY(0);
-  transition: transform 0.35s ease-in-out;
-}
-
-/* 🔥 hover */
-footer.ft-sec .ft-top .arrow-link:hover .arrow .arrow-main {
-  transform: translateY(-14px); /* 👈 reverse */
-}
-
-footer.ft-sec .ft-top .arrow-link:hover .arrow .arrow-extra-line {
-  transform: scaleY(1);
-}
-
-footer.ft-sec button.ft-top {
-  margin: 0 auto;
-  position: relative;
-  top: 30px;
-}
-
 /* Footer heading: force solid text (override Quote gradient split styles) */
 .ft-title .q-line-inner {
   background: none !important;

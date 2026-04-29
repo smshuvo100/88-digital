@@ -102,6 +102,7 @@ export default function Footer() {
           </motion.p>
 
           {/* scroll top */}
+          {/* scroll top */}
           <motion.button type="button" className="ft-top" variants={fadeUpItem}>
             <a href="#home-sec" className="arrow-link">
               <div className="arrow">
@@ -110,14 +111,16 @@ export default function Footer() {
                   viewBox="0 0 16 30"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  {/* লম্বা লাইনটি নিচ থেকে উপরের দিকে ড্র হবে */}
                   <line
                     className="arrow-extra-line"
                     x1="8"
-                    y1="1"
+                    y1="14"
                     x2="8"
-                    y2="15"
+                    y2="0"
                   />
 
+                  {/* এটি আপনার একদম অরিজিনাল মেইন আইকন (কোনো পরিবর্তন করা হয়নি) */}
                   <path
                     className="arrow-main"
                     fillRule="evenodd"
